@@ -1,0 +1,145 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="login-container">
+    <h1>Sign In</h1>
+
+    <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+
+    <form asp-action="Login" method="post">
+        <input type="hidden" asp-for="ReturnUrl" />
+        <input type="hidden" asp-for="Button" value="login" />
+
+        <div class="form-group">
+            <label asp-for="Username">Username</label>
+            <input asp-for="Username" type="text" class="form-control" autofocus />
+            <span asp-validation-for="Username" class="validation-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password">Password</label>
+            <input asp-for="Password" type="password" class="form-control" />
+            <span asp-validation-for="Password" class="validation-message"></span>
+        </div>
+
+        <div class="checkbox-group">
+            <input asp-for="RememberLogin" type="checkbox" />
+            <label asp-for="RememberLogin">Remember Me</label>
+        </div>
+
+        <button type="submit" class="btn">Login</button>
+
+        <div class="register-link">
+            Don't have an account?
+            <a asp-action="Register" asp-route-returnUrl="@Model.ReturnUrl">Register here</a>
+        </div>
+    </form>
+</div>
+
+<style>
+    .login-container {
+        background: white;
+        padding: 3rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        width: 100%;
+        max-width: 400px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 2rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #555;
+        font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: border-color 0.3s;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #667eea;
+    }
+
+    .checkbox-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+        .checkbox-group input {
+            margin-right: 8px;
+        }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+    .register-link {
+        text-align: center;
+        margin-top: 1.5rem;
+        color: #666;
+    }
+
+        .register-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+            .register-link a:hover {
+                text-decoration: underline;
+            }
+
+    .validation-message {
+        color: #dc3545;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .validation-summary {
+        background: #f8d7da;
+        border: 1px solid #f5c6cb;
+        color: #721c24;
+        padding: 1rem;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+    }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

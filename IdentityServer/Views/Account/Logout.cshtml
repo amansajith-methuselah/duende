@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "Logout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var logoutId = ViewData["LogoutId"] as string;
+    var clientName = ViewData["ClientName"] as string;
+    var postLogoutRedirectUri = ViewData["PostLogoutRedirectUri"] as string;
+}
+
+<div class="logout-container">
+    <div class="logout-icon">👋</div>
+    <h1>Logout</h1>
+    <p>Would you like to logout from IdentityServer?</p>
+
+    @if (!string.IsNullOrEmpty(clientName))
+    {
+        <p class="client-info">You will be logged out from <strong>@clientName</strong></p>
+    }
+
+    <form asp-action="Logout" method="post">
+        <input type="hidden" name="logoutId" value="@logoutId" />
+        <input type="hidden" name="returnUrl" value="@postLogoutRedirectUri" />
+
+        <div class="button-group">
+            <button type="submit" class="btn btn-primary">
+                Yes, Logout
+            </button>
+            <a asp-action="Index" asp-controller="Home" class="btn btn-secondary">
+                No, Stay Logged In
+            </a>
+        </div>
+    </form>
+</div>
+
+<style>
+    .logout-container {
+        background: white;
+        padding: 3rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        text-align: center;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .logout-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        color: #666;
+        margin-bottom: 1rem;
+    }
+
+    .client-info {
+        color: #667eea;
+        font-weight: 500;
+        margin-bottom: 2rem;
+    }
+
+    .button-group {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+    }
+
+    .btn-secondary {
+        background: #6c757d;
+        color: white;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+</style>

@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="home-container">
+    <h1>IdentityServer is Running!</h1>
+    <p>Welcome to the Identity Server</p>
+    <div class="links">
+        <a asp-action="Login" asp-controller="Account" class="btn">Login</a>
+        <a asp-action="Register" asp-controller="Account" class="btn">Register</a>
+    </div>
+</div>
+
+<style>
+    .home-container {
+        background: white;
+        padding: 3rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        text-align: center;
+        max-width: 500px;
+    }
+
+    h1 {
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        color: #666;
+        margin-bottom: 2rem;
+    }
+
+    .links {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .btn {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 25px;
+        font-size: 16px;
+        text-decoration: none;
+        transition: transform 0.2s;
+    }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+</style>

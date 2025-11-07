@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "User Profile";
+}
+
+<div style="background: white; padding: 3rem; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); max-width: 800px; margin: 0 auto;">
+    <h1 style="color: #333; margin-bottom: 2rem; text-align: center;">User Profile</h1>
+
+    <div style="margin-bottom: 2rem;">
+        <h3 style="color: #667eea; margin-bottom: 1rem;">Basic Information</h3>
+        <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+            <p><strong>Username:</strong> @(User.FindFirst("preferred_username")?.Value ?? User.Identity?.Name)</p>
+            <p><strong>Name:</strong> @User.FindFirst("name")?.Value</p>
+            <p><strong>Email:</strong> @User.FindFirst("email")?.Value</p>
+            <p><strong>Phone:</strong> @(User.FindFirst("phone_number")?.Value ?? "Not provided")</p>
+            <p><strong>Country:</strong> @(User.FindFirst("country")?.Value ?? "Not provided")</p>
+            <p><strong>Birthdate:</strong> @(User.FindFirst("birthdate")?.Value ?? "Not provided")</p>
+        </div>
+    </div>
+
+    <div>
+        <h3 style="color: #667eea; margin-bottom: 1rem;">All Claims</h3>
+        <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; max-height: 400px; overflow-y: auto;">
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="border-bottom: 2px solid #dee2e6;">
+                        <th style="text-align: left; padding: 0.5rem;">Claim Type</th>
+                        <th style="text-align: left; padding: 0.5rem;">Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var claim in User.Claims)
+                    {
+                        <tr style="border-bottom: 1px solid #dee2e6;">
+                            <td style="padding: 0.5rem; font-family: monospace; font-size: 0.9rem;">@claim.Type</td>
+                            <td style="padding: 0.5rem;">@claim.Value</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+        <a asp-controller="Home" asp-action="Index"
+           style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 40px; border-radius: 25px; text-decoration: none; display: inline-block;">
+            Back to Home
+        </a>
+    </div>
+</div>

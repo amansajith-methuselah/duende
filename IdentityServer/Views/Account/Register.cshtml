@@ -1,0 +1,173 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="register-container">
+    <h1>Create Account</h1>
+
+    <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+
+    <form asp-action="Register" method="post">
+        <input type="hidden" asp-for="ReturnUrl" />
+
+        <div class="form-group">
+            <label asp-for="Username">Username *</label>
+            <input asp-for="Username" type="text" class="form-control" required />
+            <span asp-validation-for="Username" class="validation-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email">Email *</label>
+            <input asp-for="Email" type="email" class="form-control" required />
+            <span asp-validation-for="Email" class="validation-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password">Password *</label>
+            <input asp-for="Password" type="password" class="form-control" required />
+            <span asp-validation-for="Password" class="validation-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ConfirmPassword">Confirm Password *</label>
+            <input asp-for="ConfirmPassword" type="password" class="form-control" required />
+            <span asp-validation-for="ConfirmPassword" class="validation-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="FirstName">First Name *</label>
+            <input asp-for="FirstName" type="text" class="form-control" required />
+            <span asp-validation-for="FirstName" class="validation-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="LastName">Last Name *</label>
+            <input asp-for="LastName" type="text" class="form-control" required />
+            <span asp-validation-for="LastName" class="validation-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="PhoneNumber">Phone Number</label>
+            <input asp-for="PhoneNumber" type="tel" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="validation-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DateOfBirth">Date of Birth</label>
+            <input asp-for="DateOfBirth" type="date" class="form-control" />
+            <span asp-validation-for="DateOfBirth" class="validation-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Country">Country</label>
+            <input asp-for="Country" type="text" class="form-control" />
+            <span asp-validation-for="Country" class="validation-message"></span>
+        </div>
+
+        <button type="submit" class="btn">Register</button>
+
+        <div class="login-link">
+            Already have an account?
+            <a asp-action="Login" asp-route-returnUrl="@Model.ReturnUrl">Login here</a>
+        </div>
+    </form>
+</div>
+
+<style>
+    .register-container {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        width: 100%;
+        max-width: 500px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 2rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #555;
+        font-weight: 500;
+    }
+
+    input.form-control {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: border-color 0.3s;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #667eea;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: transform 0.2s;
+        margin-top: 1rem;
+    }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+    .login-link {
+        text-align: center;
+        margin-top: 1.5rem;
+        color: #666;
+    }
+
+        .login-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+            .login-link a:hover {
+                text-decoration: underline;
+            }
+
+    .validation-message {
+        color: #dc3545;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .validation-summary {
+        background: #f8d7da;
+        border: 1px solid #f5c6cb;
+        color: #721c24;
+        padding: 1rem;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+    }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

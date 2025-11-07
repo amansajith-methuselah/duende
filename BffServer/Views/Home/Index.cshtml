@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div style="background: white; padding: 3rem; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); text-align: center; max-width: 800px; margin: 0 auto;">
+    <h1 style="color: #333; margin-bottom: 1rem;">Welcome to BFF Server</h1>
+
+    @if (User?.Identity?.IsAuthenticated == true)
+    {
+        <p style="color: #666; margin-bottom: 2rem;">
+            Hello, <strong>@(User.FindFirst("name")?.Value ?? User.Identity.Name)</strong>!
+        </p>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a asp-controller="Account" asp-action="Profile"
+               style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; transition: transform 0.2s;">
+                View Profile
+            </a>
+            <a href="/api/user/profile" target="_blank"
+               style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; transition: transform 0.2s;">
+                API: User Profile
+            </a>
+            <a href="/api/api/test" target="_blank"
+               style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; transition: transform 0.2s;">
+                API: Test Endpoint
+            </a>
+        </div>
+
+        <div style="margin-top: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px; text-align: left;">
+            <h3 style="color: #333; margin-bottom: 1rem;">Your Claims:</h3>
+            <ul style="list-style: none; padding: 0;">
+                @foreach (var claim in User.Claims)
+                {
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #dee2e6;">
+                        <strong>@claim.Type:</strong> @claim.Value
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+    else
+    {
+        <p style="color: #666; margin-bottom: 2rem;">
+            You are not logged in. Please login to access protected resources.
+        </p>
+
+        <a asp-controller="Account" asp-action="Login"
+           style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 40px; border-radius: 25px; text-decoration: none; display: inline-block; transition: transform 0.2s;">
+            Login
+        </a>
+    }
+
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #dee2e6;">
+        <h3 style="color: #333; margin-bottom: 1rem;">Available Endpoints</h3>
+        <ul style="list-style: none; padding: 0; text-align: left;">
+            <li style="padding: 0.5rem 0;"><code>/api/user</code> - Get current user info (public)</li>
+            <li style="padding: 0.5rem 0;"><code>/api/user/profile</code> - Get user profile (protected)</li>
+            <li style="padding: 0.5rem 0;"><code>/api/user/claims</code> - Get user claims (protected)</li>
+            <li style="padding: 0.5rem 0;"><code>/api/api/test</code> - Test endpoint (protected)</li>
+            <li style="padding: 0.5rem 0;"><code>/api/api/data</code> - Proxy to backend API (protected)</li>
+            <li style="padding: 0.5rem 0;"><code>/bff/login</code> - BFF login endpoint</li>
+            <li style="padding: 0.5rem 0;"><code>/bff/logout</code> - BFF logout endpoint</li>
+            <li style="padding: 0.5rem 0;"><code>/bff/user</code> - BFF user endpoint</li>
+        </ul>
+    </div>
+</div>
