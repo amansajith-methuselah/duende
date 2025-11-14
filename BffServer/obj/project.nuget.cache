@@ -1,16 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "JcsUNqQpdMQ=",
+  "dgSpecHash": "PUN2uEnwl2E=",
   "success": true,
   "projectFilePath": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\BffServer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\tuner\\.nuget\\packages\\duende.accesstokenmanagement\\3.0.0\\duende.accesstokenmanagement.3.0.0.nupkg.sha512",
-    "C:\\Users\\tuner\\.nuget\\packages\\duende.accesstokenmanagement.openidconnect\\3.0.0\\duende.accesstokenmanagement.openidconnect.3.0.0.nupkg.sha512",
-    "C:\\Users\\tuner\\.nuget\\packages\\duende.bff\\2.1.0\\duende.bff.2.1.0.nupkg.sha512",
-    "C:\\Users\\tuner\\.nuget\\packages\\duende.bff.yarp\\2.1.0\\duende.bff.yarp.2.1.0.nupkg.sha512",
-    "C:\\Users\\tuner\\.nuget\\packages\\identitymodel\\7.0.0\\identitymodel.7.0.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\duende.accesstokenmanagement\\2.1.0\\duende.accesstokenmanagement.2.1.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\duende.accesstokenmanagement.openidconnect\\2.1.0\\duende.accesstokenmanagement.openidconnect.2.1.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\duende.bff\\2.2.0\\duende.bff.2.2.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\duende.bff.yarp\\2.2.0\\duende.bff.yarp.2.2.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\identitymodel\\6.2.0\\identitymodel.6.2.0.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\8.0.11\\microsoft.aspnetcore.authentication.openidconnect.8.0.11.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.21\\microsoft.aspnetcore.openapi.8.0.21.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.6\\microsoft.data.sqlclient.5.1.6.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.1.1\\microsoft.data.sqlclient.sni.runtime.5.1.1.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
@@ -26,6 +31,8 @@
     "C:\\Users\\tuner\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\8.0.0\\microsoft.extensions.options.configurationextensions.8.0.0.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\microsoft.identity.client\\4.61.3\\microsoft.identity.client.4.61.3.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\microsoft.identity.client.extensions.msal\\4.61.3\\microsoft.identity.client.extensions.msal.4.61.3.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.1.2\\microsoft.identitymodel.abstractions.7.1.2.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.1.2\\microsoft.identitymodel.jsonwebtokens.7.1.2.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\microsoft.identitymodel.logging\\7.1.2\\microsoft.identitymodel.logging.7.1.2.nupkg.sha512",
@@ -33,39 +40,35 @@
     "C:\\Users\\tuner\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\7.1.2\\microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.1.2\\microsoft.identitymodel.tokens.7.1.2.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.6.2\\swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.formats.asn1\\5.0.0\\system.formats.asn1.5.0.0.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.1.2\\system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\system.io.hashing\\7.0.0\\system.io.hashing.7.0.0.nupkg.sha512",
-    "C:\\Users\\tuner\\.nuget\\packages\\yarp.reverseproxy\\2.0.0\\yarp.reverseproxy.2.0.0.nupkg.sha512"
+    "C:\\Users\\tuner\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.memory.data\\1.0.2\\system.memory.data.1.0.2.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.runtime.caching\\6.0.0\\system.runtime.caching.6.0.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.security.accesscontrol\\6.0.0\\system.security.accesscontrol.6.0.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.security.cryptography.cng\\5.0.0\\system.security.cryptography.cng.5.0.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.security.cryptography.protecteddata\\6.0.0\\system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.text.encoding.codepages\\6.0.0\\system.text.encoding.codepages.6.0.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\yarp.reverseproxy\\2.1.0\\yarp.reverseproxy.2.1.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "message": "BffServer depends on Duende.AccessTokenManagement.OpenIdConnect (>= 2.2.0) but Duende.AccessTokenManagement.OpenIdConnect 2.2.0 was not found. Duende.AccessTokenManagement.OpenIdConnect 3.0.0 was resolved instead.",
-      "projectPath": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\BffServer.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\BffServer.csproj",
-      "libraryId": "Duende.AccessTokenManagement.OpenIdConnect",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "message": "Package 'Duende.AccessTokenManagement.OpenIdConnect' 3.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-7mr7-4f54-vcx5",
-      "projectPath": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\BffServer.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\BffServer.csproj",
-      "libraryId": "Duende.AccessTokenManagement.OpenIdConnect",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

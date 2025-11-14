@@ -99,6 +99,40 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Duende.IdentityServer.EntityFramework/7.3.2": {
+        "type": "package",
+        "dependencies": {
+          "Duende.IdentityServer": "7.3.2",
+          "Duende.IdentityServer.EntityFramework.Storage": "7.3.2"
+        },
+        "compile": {
+          "lib/net8.0/Duende.IdentityServer.EntityFramework.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Duende.IdentityServer.EntityFramework.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Duende.IdentityServer.EntityFramework.Storage/7.3.2": {
+        "type": "package",
+        "dependencies": {
+          "Duende.IdentityServer.Storage": "7.3.2",
+          "Microsoft.EntityFrameworkCore.Relational": "8.0.11"
+        },
+        "compile": {
+          "lib/net8.0/Duende.IdentityServer.EntityFramework.Storage.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Duende.IdentityServer.EntityFramework.Storage.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Duende.IdentityServer.Storage/7.3.2": {
         "type": "package",
         "dependencies": {
@@ -1728,6 +1762,42 @@
         "lib/net8.0/Duende.IdentityServer.AspNetIdentity.xml",
         "lib/net9.0/Duende.IdentityServer.AspNetIdentity.dll",
         "lib/net9.0/Duende.IdentityServer.AspNetIdentity.xml"
+      ]
+    },
+    "Duende.IdentityServer.EntityFramework/7.3.2": {
+      "sha512": "CQBNYckFJyQRkOcAb+07DhpAD0Jcr16F/7eEojW+efQHwhXe6MticEaLo5GpW9VPo1t5SMJaCgxWmLFX15QbZg==",
+      "type": "package",
+      "path": "duende.identityserver.entityframework/7.3.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "duende.identityserver.entityframework.7.3.2.nupkg.sha512",
+        "duende.identityserver.entityframework.nuspec",
+        "icon.png",
+        "lib/net8.0/Duende.IdentityServer.EntityFramework.dll",
+        "lib/net8.0/Duende.IdentityServer.EntityFramework.xml",
+        "lib/net9.0/Duende.IdentityServer.EntityFramework.dll",
+        "lib/net9.0/Duende.IdentityServer.EntityFramework.xml"
+      ]
+    },
+    "Duende.IdentityServer.EntityFramework.Storage/7.3.2": {
+      "sha512": "3fV0mJ7x9LMvJ8Z4LftlUDY+cCV8HMUcoIg5NGIefqC1A5EMxYFvACR7/Y5K3WxhP2OytiziH9P02qe2y3Jxrw==",
+      "type": "package",
+      "path": "duende.identityserver.entityframework.storage/7.3.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "duende.identityserver.entityframework.storage.7.3.2.nupkg.sha512",
+        "duende.identityserver.entityframework.storage.nuspec",
+        "icon.png",
+        "lib/net8.0/Duende.IdentityServer.EntityFramework.Storage.dll",
+        "lib/net8.0/Duende.IdentityServer.EntityFramework.Storage.xml",
+        "lib/net9.0/Duende.IdentityServer.EntityFramework.Storage.dll",
+        "lib/net9.0/Duende.IdentityServer.EntityFramework.Storage.xml"
       ]
     },
     "Duende.IdentityServer.Storage/7.3.2": {
@@ -4105,6 +4175,7 @@
     "net8.0": [
       "Duende.IdentityServer >= 7.3.2",
       "Duende.IdentityServer.AspNetIdentity >= 7.3.2",
+      "Duende.IdentityServer.EntityFramework >= 7.3.2",
       "IdentityModel >= 6.2.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.11",
@@ -4170,6 +4241,10 @@
             "target": "Package",
             "version": "[7.3.2, )"
           },
+          "Duende.IdentityServer.EntityFramework": {
+            "target": "Package",
+            "version": "[7.3.2, )"
+          },
           "IdentityModel": {
             "target": "Package",
             "version": "[6.2.0, )"
@@ -4208,7 +4283,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

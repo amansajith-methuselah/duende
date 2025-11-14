@@ -1,5 +1,6 @@
 using IdentityServer;
 using IdentityServer.Data;
+using IdentityServer.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -45,13 +46,25 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
     options.Lockout.MaxFailedAccessAttempts = 5;
     options.Lockout.AllowedForNewUsers = true;
 
-    // User settings
-    options.User.RequireUniqueEmail = true;
+    // CRITICAL: Disable all default unique checks
+    options.User.RequireUniqueEmail = false;
 })
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
-// Add IdentityServer
+// CRITICAL: Remove ALL default validators and add ONLY our tenant-aware validator
+builder.Services.AddScoped<IUserValidator<ApplicationUser>>(services =>
+    new TenantAwareUserValidator(services.GetRequiredService<IHttpContextAccessor>()));
+
+// Remove default UserValidator (enforces global unique username)
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.User.RequireUniqueEmail = false;
+});
+
+// Add IdentityServer with EntityFramework stores
+var migrationsAssembly = typeof(Program).Assembly.GetName().Name;
+
 builder.Services.AddIdentityServer(options =>
 {
     options.Events.RaiseErrorEvents = true;
@@ -61,16 +74,33 @@ builder.Services.AddIdentityServer(options =>
 
     options.Authentication.CookieLifetime = TimeSpan.FromHours(2);
     options.Authentication.CookieSlidingExpiration = true;
-})
-    .AddInMemoryClients(Config.Clients)
-    .AddInMemoryIdentityResources(Config.IdentityResources)
-    .AddInMemoryApiScopes(Config.ApiScopes)
-    .AddAspNetIdentity<ApplicationUser>();
+
+    // LEAVE IssuerUri BLANK - will be set dynamically per request
+    options.IssuerUri = null;
+}).AddConfigurationStore(options =>
+    {
+        options.ConfigureDbContext = b => b.UseSqlServer(connectionString,
+            sql => sql.MigrationsAssembly(migrationsAssembly));
+    })
+    .AddOperationalStore(options =>
+    {
+        options.ConfigureDbContext = b => b.UseSqlServer(connectionString,
+            sql => sql.MigrationsAssembly(migrationsAssembly));
+    })
+    .AddAspNetIdentity<ApplicationUser>()
+    .AddProfileService<ProfileService>();
+
+// Register custom tenant-aware client store
+builder.Services.AddTransient<Duende.IdentityServer.Stores.IClientStore, IdentityServer.Services.TenantAwareClientStore>();
+
+// Required for tenant resolution in client store
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
 // Seed data
 await SeedData.EnsureSeedData(app);
+await SeedDataMultiTenant.EnsureSeedData(app.Services);
 
 // Configure the HTTP request pipeline
 if (!app.Environment.IsDevelopment())
@@ -84,7 +114,26 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// Add tenant resolution middleware
+app.UseMiddleware<IdentityServer.Middleware.TenantResolutionMiddleware>();
+
+// CRITICAL: Set dynamic issuer based on request host (tenant-aware)
+app.Use(async (context, next) =>
+{
+    var options = context.RequestServices.GetRequiredService<Duende.IdentityServer.Configuration.IdentityServerOptions>();
+
+    // Get the current request host (e.g., "tenant1.localhost:7140" or "tenant2.localhost:7140")
+    var host = context.Request.Host.Value;
+
+    // Set the issuer dynamically to match the tenant subdomain
+    options.IssuerUri = $"https://{host}";
+
+    await next();
+});
+
+
 app.UseIdentityServer();
+
 app.UseAuthorization();
 
 // Map MVC controllers

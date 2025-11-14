@@ -3,48 +3,111 @@
   "WorkspaceRootPath": "C:\\Project\\du\\DuendeIdentityServerDemo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\bffserver\\controllers\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|solutionrelative:bffserver\\controllers\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\bffserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|solutionrelative:bffserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\bffserver\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|solutionrelative:bffserver\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\views\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\views\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\bffserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|solutionrelative:bffserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\bffserver\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|solutionrelative:bffserver\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\bffserver\\bffserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|solutionrelative:bffserver\\bffserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\bffserver\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|solutionrelative:bffserver\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\identityserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\identityserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7347F709-DCE3-4D86-8E97-49187F7E91CD}|ClientApp\\ClientApp.csproj|c:\\project\\du\\duendeidentityserverdemo\\clientapp\\clientapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{7347F709-DCE3-4D86-8E97-49187F7E91CD}|ClientApp\\ClientApp.csproj|solutionrelative:clientapp\\clientapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\bffserver\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|solutionrelative:bffserver\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\bffserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|solutionrelative:bffserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\services\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\services\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\views\\home\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\views\\home\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\global.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\global.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\bffserver\\bffserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|solutionrelative:bffserver\\bffserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\bffserver\\bffserver.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
       "RelativeMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|solutionrelative:bffserver\\bffserver.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\services\\tenantawareuservalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\services\\tenantawareuservalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\views\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\views\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.307\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\services\\tenantawareclientstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\services\\tenantawareclientstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\data\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\data\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\middleware\\tenantresolutionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\middleware\\tenantresolutionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\seeddatamultitenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\seeddatamultitenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\data\\tenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\data\\tenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\bffserver\\controllers\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|solutionrelative:bffserver\\controllers\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\bffserver\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|solutionrelative:bffserver\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7347F709-DCE3-4D86-8E97-49187F7E91CD}|ClientApp\\ClientApp.csproj|c:\\project\\du\\duendeidentityserverdemo\\clientapp\\clientapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7347F709-DCE3-4D86-8E97-49187F7E91CD}|ClientApp\\ClientApp.csproj|solutionrelative:clientapp\\clientapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\bffserver\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -103,10 +166,6 @@
       "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -129,14 +188,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\models\\accountviewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\models\\accountviewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7347F709-DCE3-4D86-8E97-49187F7E91CD}|ClientApp\\ClientApp.csproj|c:\\project\\du\\duendeidentityserverdemo\\clientapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -173,14 +224,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\data\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\data\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -190,45 +233,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\appsettings.json",
+              "RelativeDocumentMoniker": "BffServer\\appsettings.json",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\appsettings.json",
+              "RelativeToolTip": "BffServer\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-14T05:24:56.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Config.cs",
-              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Config.cs",
-              "RelativeDocumentMoniker": "IdentityServer\\Config.cs",
-              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Config.cs",
-              "RelativeToolTip": "IdentityServer\\Config.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAQwEkAAAABAAAAAAAAAA==",
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "BffServer\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "BffServer\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T05:53:05.463Z",
+              "WhenOpened": "2025-11-14T05:22:36.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BffServer.csproj",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\BffServer.csproj",
+              "RelativeDocumentMoniker": "BffServer\\BffServer.csproj",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\BffServer.csproj",
+              "RelativeToolTip": "BffServer\\BffServer.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-06T06:36:19.762Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\appsettings.json",
+              "RelativeDocumentMoniker": "IdentityServer\\appsettings.json",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\appsettings.json",
+              "RelativeToolTip": "IdentityServer\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-05T05:22:41.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Program.cs",
+              "RelativeDocumentMoniker": "IdentityServer\\Program.cs",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Program.cs",
+              "RelativeToolTip": "IdentityServer\\Program.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T05:52:02.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "BffServer\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\AuthController.cs",
               "RelativeToolTip": "BffServer\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAAwD4AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAwD4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-06T07:09:10.482Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BffServer",
-              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\BffServer.csproj",
-              "RelativeDocumentMoniker": "BffServer\\BffServer.csproj",
-              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\BffServer.csproj",
-              "RelativeToolTip": "BffServer\\BffServer.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "IdentityServer.csproj",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\IdentityServer.csproj",
+              "RelativeDocumentMoniker": "IdentityServer\\IdentityServer.csproj",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\IdentityServer.csproj",
+              "RelativeToolTip": "IdentityServer\\IdentityServer.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-06T06:36:19.762Z",
+              "WhenOpened": "2025-11-05T05:20:22.333Z",
               "EditorCaption": ""
             },
             {
@@ -239,92 +334,83 @@
               "RelativeDocumentMoniker": "BffServer\\Program.cs",
               "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Program.cs",
               "RelativeToolTip": "BffServer\\Program.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAADwv4sAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAUwDgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-05T07:04:09.104Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ApiController.cs",
-              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\ApiController.cs",
-              "RelativeDocumentMoniker": "BffServer\\Controllers\\ApiController.cs",
-              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\ApiController.cs",
-              "RelativeToolTip": "BffServer\\Controllers\\ApiController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAYwHsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T06:09:56.258Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "ClientApp.csproj",
-              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\ClientApp\\ClientApp.csproj",
-              "RelativeDocumentMoniker": "ClientApp\\ClientApp.csproj",
-              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\ClientApp\\ClientApp.csproj",
-              "RelativeToolTip": "ClientApp\\ClientApp.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-05T06:29:23.084Z",
+              "Title": "global.json",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\global.json",
+              "RelativeDocumentMoniker": "IdentityServer\\global.json",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\global.json",
+              "RelativeToolTip": "IdentityServer\\global.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-12T05:52:36.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProfileService.cs",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Services\\ProfileService.cs",
+              "RelativeDocumentMoniker": "IdentityServer\\Services\\ProfileService.cs",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Services\\ProfileService.cs",
+              "RelativeToolTip": "IdentityServer\\Services\\ProfileService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwCMAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T10:31:11.991Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Logout.cshtml",
-              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Account\\Logout.cshtml",
-              "RelativeDocumentMoniker": "IdentityServer\\Views\\Account\\Logout.cshtml",
-              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Account\\Logout.cshtml",
-              "RelativeToolTip": "IdentityServer\\Views\\Account\\Logout.cshtml",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAQwGIAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Home\\Error.cshtml",
+              "RelativeDocumentMoniker": "IdentityServer\\Views\\Home\\Error.cshtml",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Home\\Error.cshtml",
+              "RelativeToolTip": "IdentityServer\\Views\\Home\\Error.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwDUAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-06T07:15:20.336Z",
+              "WhenOpened": "2025-11-14T04:58:45.786Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 13,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Controllers\\AccountController.cs",
               "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Controllers\\AccountController.cs",
               "RelativeToolTip": "IdentityServer\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAADsBAAAAAAAAAAAQwFQBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAQwFQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-06T05:55:49.225Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "BffServer\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "BffServer\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAQwEYAAAABAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "TenantAwareUserValidator.cs",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Services\\TenantAwareUserValidator.cs",
+              "RelativeDocumentMoniker": "IdentityServer\\Services\\TenantAwareUserValidator.cs",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Services\\TenantAwareUserValidator.cs",
+              "RelativeToolTip": "IdentityServer\\Services\\TenantAwareUserValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T06:06:34.045Z",
+              "WhenOpened": "2025-11-13T06:38:15.022Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IdentityServer.csproj",
-              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\IdentityServer.csproj",
-              "RelativeDocumentMoniker": "IdentityServer\\IdentityServer.csproj",
-              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\IdentityServer.csproj",
-              "RelativeToolTip": "IdentityServer\\IdentityServer.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-05T05:20:22.333Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "BffServer.http",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\BffServer.http",
               "RelativeDocumentMoniker": "BffServer\\BffServer.http",
@@ -337,7 +423,176 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
+              "Title": "TenantAwareClientStore.cs",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Services\\TenantAwareClientStore.cs",
+              "RelativeDocumentMoniker": "IdentityServer\\Services\\TenantAwareClientStore.cs",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Services\\TenantAwareClientStore.cs",
+              "RelativeToolTip": "IdentityServer\\Services\\TenantAwareClientStore.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAYwFcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T06:20:04.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Logout.cshtml",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Account\\Logout.cshtml",
+              "RelativeDocumentMoniker": "IdentityServer\\Views\\Account\\Logout.cshtml",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Account\\Logout.cshtml",
+              "RelativeToolTip": "IdentityServer\\Views\\Account\\Logout.cshtml",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAQwGIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T07:15:20.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Microsoft.NET.Sdk.FrameworkReferenceResolution.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.307\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.307\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.307\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets",
+              "RelativeToolTip": "..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.307\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets",
+              "ViewState": "AgIAAJoBAAAAAAAAAAAgwKgBAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-11-12T05:42:24.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "TenantResolutionMiddleware.cs",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Middleware\\TenantResolutionMiddleware.cs",
+              "RelativeDocumentMoniker": "IdentityServer\\Middleware\\TenantResolutionMiddleware.cs",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Middleware\\TenantResolutionMiddleware.cs",
+              "RelativeToolTip": "IdentityServer\\Middleware\\TenantResolutionMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T11:26:45.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Data\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "IdentityServer\\Data\\ApplicationUser.cs",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Data\\ApplicationUser.cs",
+              "RelativeToolTip": "IdentityServer\\Data\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T05:21:42.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "IdentityServer\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "IdentityServer\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAIwK4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T05:58:18.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Tenant.cs",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Data\\Tenant.cs",
+              "RelativeDocumentMoniker": "IdentityServer\\Data\\Tenant.cs",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Data\\Tenant.cs",
+              "RelativeToolTip": "IdentityServer\\Data\\Tenant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T11:22:39.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "SeedDataMultiTenant.cs",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\SeedDataMultiTenant.cs",
+              "RelativeDocumentMoniker": "IdentityServer\\SeedDataMultiTenant.cs",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\SeedDataMultiTenant.cs",
+              "RelativeToolTip": "IdentityServer\\SeedDataMultiTenant.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAxwHYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T11:29:42.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "IdentityServer\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "IdentityServer\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T05:22:12.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ApiController.cs",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\ApiController.cs",
+              "RelativeDocumentMoniker": "BffServer\\Controllers\\ApiController.cs",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\ApiController.cs",
+              "RelativeToolTip": "BffServer\\Controllers\\ApiController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwHsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T06:09:56.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ClientApp.csproj",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\ClientApp\\ClientApp.csproj",
+              "RelativeDocumentMoniker": "ClientApp\\ClientApp.csproj",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\ClientApp\\ClientApp.csproj",
+              "RelativeToolTip": "ClientApp\\ClientApp.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-05T06:29:23.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Config.cs",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Config.cs",
+              "RelativeDocumentMoniker": "IdentityServer\\Config.cs",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Config.cs",
+              "RelativeToolTip": "IdentityServer\\Config.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAQwEkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T05:53:05.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "BffServer\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "BffServer\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAQwEYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T06:06:34.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "BffServer\\Controllers\\UserController.cs",
@@ -350,7 +605,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 28,
               "Title": "Profile.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Views\\Account\\Profile.cshtml",
               "RelativeDocumentMoniker": "BffServer\\Views\\Account\\Profile.cshtml",
@@ -363,7 +618,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 30,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "BffServer\\Views\\Home\\Index.cshtml",
@@ -376,7 +631,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 31,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "BffServer\\Views\\Shared\\_Layout.cshtml",
@@ -389,7 +644,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 32,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "BffServer\\Views\\_ViewImports.cshtml",
@@ -402,7 +657,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 29,
               "Title": "AccessDenied.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Views\\Account\\AccessDenied.cshtml",
               "RelativeDocumentMoniker": "BffServer\\Views\\Account\\AccessDenied.cshtml",
@@ -415,7 +670,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 33,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "BffServer\\Controllers\\HomeController.cs",
@@ -428,7 +683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 34,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "BffServer\\Models\\ErrorViewModel.cs",
@@ -441,7 +696,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 35,
               "Title": "UserViewModel.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Models\\UserViewModel.cs",
               "RelativeDocumentMoniker": "BffServer\\Models\\UserViewModel.cs",
@@ -454,7 +709,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 36,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "IdentityServer\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -467,7 +722,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 37,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "IdentityServer\\Views\\Home\\Index.cshtml",
@@ -480,20 +735,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 38,
               "Title": "AccessDenied.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Account\\AccessDenied.cshtml",
               "RelativeDocumentMoniker": "IdentityServer\\Views\\Account\\AccessDenied.cshtml",
               "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Account\\AccessDenied.cshtml",
               "RelativeToolTip": "IdentityServer\\Views\\Account\\AccessDenied.cshtml",
-              "ViewState": "AgIAACkAAAAAAAAAAAAAACkAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAIBJwCkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-06T06:00:13.951Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 39,
               "Title": "RegisterSuccess.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Account\\RegisterSuccess.cshtml",
               "RelativeDocumentMoniker": "IdentityServer\\Views\\Account\\RegisterSuccess.cshtml",
@@ -506,7 +761,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 40,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "IdentityServer\\Views\\Account\\Register.cshtml",
@@ -519,20 +774,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "IdentityServer\\Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "IdentityServer\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAHQAAAAAAAAAAAAQwJAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-06T05:58:18.145Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 41,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "IdentityServer\\Views\\Shared\\_Layout.cshtml",
@@ -545,7 +787,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 42,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "IdentityServer\\Views\\_ViewImports.cshtml",
@@ -558,7 +800,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 43,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Controllers\\HomeController.cs",
@@ -571,7 +813,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 44,
               "Title": "LogoutViewModel.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Models\\AccountViewModels\\LogoutViewModel.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Models\\AccountViewModels\\LogoutViewModel.cs",
@@ -584,7 +826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 45,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Models\\AccountViewModels\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Models\\AccountViewModels\\RegisterViewModel.cs",
@@ -597,7 +839,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 46,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Models\\AccountViewModels\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Models\\AccountViewModels\\LoginViewModel.cs",
@@ -610,20 +852,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Program.cs",
-              "RelativeDocumentMoniker": "IdentityServer\\Program.cs",
-              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Program.cs",
-              "RelativeToolTip": "IdentityServer\\Program.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAQwF4AAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T05:52:02.622Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 48,
               "Title": "site.scss",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\wwwroot\\css\\site.scss",
               "RelativeDocumentMoniker": "IdentityServer\\wwwroot\\css\\site.scss",
@@ -631,11 +860,12 @@
               "RelativeToolTip": "IdentityServer\\wwwroot\\css\\site.scss",
               "ViewState": "AgIAAF4AAAAAAAAAAAAmwHYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
-              "WhenOpened": "2025-11-05T10:27:02.507Z"
+              "WhenOpened": "2025-11-05T10:27:02.507Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 49,
               "Title": "logout.html",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\wwwroot\\logout.html",
               "RelativeDocumentMoniker": "BffServer\\wwwroot\\logout.html",
@@ -643,11 +873,12 @@
               "RelativeToolTip": "BffServer\\wwwroot\\logout.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-05T10:14:54.07Z"
+              "WhenOpened": "2025-11-05T10:14:54.07Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 47,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\ClientApp\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "ClientApp\\Controllers\\HomeController.cs",
@@ -655,23 +886,12 @@
               "RelativeToolTip": "ClientApp\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T06:32:37.66Z"
+              "WhenOpened": "2025-11-05T06:32:37.66Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\appsettings.json",
-              "RelativeDocumentMoniker": "IdentityServer\\appsettings.json",
-              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\appsettings.json",
-              "RelativeToolTip": "IdentityServer\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-05T05:22:41.06Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 50,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\wwwroot\\index.html",
               "RelativeDocumentMoniker": "BffServer\\wwwroot\\index.html",
@@ -679,35 +899,38 @@
               "RelativeToolTip": "BffServer\\wwwroot\\index.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-05T09:39:46.043Z"
+              "WhenOpened": "2025-11-05T09:39:46.043Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 54,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\ClientApp\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "ClientApp\\Properties\\launchSettings.json",
               "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\ClientApp\\Properties\\launchSettings.json",
               "RelativeToolTip": "ClientApp\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAABRwBgAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-05T06:31:01.7Z"
+              "WhenOpened": "2025-11-05T06:31:01.7Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 51,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "BffServer\\Properties\\launchSettings.json",
               "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Properties\\launchSettings.json",
               "RelativeToolTip": "BffServer\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAABRwBoAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-05T07:06:09.157Z"
+              "WhenOpened": "2025-11-05T07:06:09.157Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 52,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\ClientApp\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "ClientApp\\Views\\Shared\\_Layout.cshtml",
@@ -715,23 +938,25 @@
               "RelativeToolTip": "ClientApp\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAABMAAAAAAAAAAAAuwCUAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T06:40:33.203Z"
+              "WhenOpened": "2025-11-05T06:40:33.203Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 53,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\ClientApp\\Program.cs",
               "RelativeDocumentMoniker": "ClientApp\\Program.cs",
               "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\ClientApp\\Program.cs",
               "RelativeToolTip": "ClientApp\\Program.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAABwAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAIBJwBwAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T06:27:17.611Z"
+              "WhenOpened": "2025-11-05T06:27:17.611Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 55,
               "Title": "SeedData.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\SeedData.cs",
               "RelativeDocumentMoniker": "IdentityServer\\SeedData.cs",
@@ -739,31 +964,8 @@
               "RelativeToolTip": "IdentityServer\\SeedData.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAQwCsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T06:04:53.776Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "IdentityServer\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "IdentityServer\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T05:22:12.173Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "ApplicationUser.cs",
-              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Data\\ApplicationUser.cs",
-              "RelativeDocumentMoniker": "IdentityServer\\Data\\ApplicationUser.cs",
-              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Data\\ApplicationUser.cs",
-              "RelativeToolTip": "IdentityServer\\Data\\ApplicationUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T05:21:42.12Z"
+              "WhenOpened": "2025-11-05T06:04:53.776Z",
+              "EditorCaption": ""
             }
           ]
         }

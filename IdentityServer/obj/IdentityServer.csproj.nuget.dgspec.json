@@ -59,6 +59,10 @@
               "target": "Package",
               "version": "[7.3.2, )"
             },
+            "Duende.IdentityServer.EntityFramework": {
+              "target": "Package",
+              "version": "[7.3.2, )"
+            },
             "IdentityModel": {
               "target": "Package",
               "version": "[6.2.0, )"
@@ -97,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

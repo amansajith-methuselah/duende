@@ -41,3 +41,4 @@ C:\Project\du\DuendeIdentityServerDemo\ClientApp\obj\Debug\net8.0\refint\ClientA
 C:\Project\du\DuendeIdentityServerDemo\ClientApp\obj\Debug\net8.0\ClientApp.pdb
 C:\Project\du\DuendeIdentityServerDemo\ClientApp\obj\Debug\net8.0\ClientApp.genruntimeconfig.cache
 C:\Project\du\DuendeIdentityServerDemo\ClientApp\obj\Debug\net8.0\ref\ClientApp.dll
+C:\Project\du\DuendeIdentityServerDemo\ClientApp\obj\Debug\net8.0\ClientApp.sourcelink.json

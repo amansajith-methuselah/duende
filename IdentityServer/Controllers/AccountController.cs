@@ -1,4 +1,5 @@
 ﻿using Duende.IdentityServer.Events;
+using Microsoft.EntityFrameworkCore;
 using Duende.IdentityServer.Extensions;
 using Duende.IdentityServer.Services;
 using IdentityServer.Data;
@@ -53,7 +54,14 @@ public class AccountController : Controller
             }
         }
 
+        // Get tenant from HttpContext (set by middleware)
+        var tenant = HttpContext.Items["Tenant"] as Tenant;
+
         ViewData["ReturnUrl"] = returnUrl;
+        ViewData["TenantName"] = tenant?.Name ?? "Identity Server";
+        ViewData["TenantColor"] = tenant?.PrimaryColor ?? "#1E40AF";
+        ViewData["TenantLogo"] = tenant?.LogoUrl;
+
         return View(new LoginViewModel { ReturnUrl = returnUrl });
     }
 
@@ -68,23 +76,38 @@ public class AccountController : Controller
 
         if (ModelState.IsValid)
         {
+            // CRITICAL: Get current tenant from HttpContext
+            var tenantId = HttpContext.Items["TenantId"] as string;
+
+            // CRITICAL: Find user by username AND tenant
+            var user = await _userManager.Users
+                .FirstOrDefaultAsync(u => u.UserName == model.Username && u.TenantId == tenantId);
+
+            if (user == null)
+            {
+                // User doesn't exist in this tenant
+                _logger.LogWarning("Login failed: User {Username} not found in tenant {TenantId}", model.Username, tenantId);
+                await _events.RaiseAsync(new UserLoginFailureEvent(model.Username, "invalid credentials"));
+                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                return View(model);
+            }
+
+            // Now attempt sign in with the tenant-specific user
             var result = await _signInManager.PasswordSignInAsync(
-                model.Username,
+                user,
                 model.Password,
                 model.RememberLogin,
                 lockoutOnFailure: true);
 
             if (result.Succeeded)
             {
-                var user = await _userManager.FindByNameAsync(model.Username);
-
                 await _events.RaiseAsync(new UserLoginSuccessEvent(
                     user.UserName,
                     user.Id,
                     user.UserName,
                     clientId: null));
 
-                _logger.LogInformation("User {Username} logged in successfully", model.Username);
+                _logger.LogInformation("User {Username} logged in successfully to tenant {TenantId}", model.Username, tenantId);
 
                 if (!string.IsNullOrEmpty(model.ReturnUrl))
                 {
@@ -138,7 +161,14 @@ public class AccountController : Controller
     {
         _logger.LogInformation("Registration page loaded with ReturnUrl: {ReturnUrl}", returnUrl);
 
+        // Get tenant from HttpContext (set by middleware)
+        var tenant = HttpContext.Items["Tenant"] as Tenant;
+
         ViewData["ReturnUrl"] = returnUrl;
+        ViewData["TenantName"] = tenant?.Name ?? "Identity Server";
+        ViewData["TenantColor"] = tenant?.PrimaryColor ?? "#1E40AF";
+        ViewData["TenantLogo"] = tenant?.LogoUrl;
+
         return View(new RegisterViewModel { ReturnUrl = returnUrl });
     }
 
@@ -152,13 +182,18 @@ public class AccountController : Controller
 
         if (ModelState.IsValid)
         {
+            // Get tenant from HttpContext
+            var tenantId = HttpContext.Items["TenantId"] as string;
+
             var user = new ApplicationUser
             {
                 UserName = model.Username,
                 Email = model.Email,
-                EmailConfirmed = true
+                EmailConfirmed = true,
+                TenantId = tenantId  // Assign tenant to user
             };
 
+            // The custom validator will check username/email uniqueness within tenant
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
@@ -166,14 +201,14 @@ public class AccountController : Controller
                 _logger.LogInformation("User created a new account with password.");
 
                 var claims = new List<Claim>
-                {
-                    new Claim("name", $"{model.FirstName} {model.LastName}"),
-                    new Claim("given_name", model.FirstName),
-                    new Claim("family_name", model.LastName),
-                    new Claim("email", model.Email),
-                    new Claim("preferred_username", model.Username),
-                    new Claim("email_verified", "true")
-                };
+            {
+                new Claim("name", $"{model.FirstName} {model.LastName}"),
+                new Claim("given_name", model.FirstName),
+                new Claim("family_name", model.LastName),
+                new Claim("email", model.Email),
+                new Claim("preferred_username", model.Username),
+                new Claim("email_verified", "true")
+            };
 
                 if (!string.IsNullOrEmpty(model.PhoneNumber))
                 {
@@ -262,57 +297,140 @@ public class AccountController : Controller
         // Get the logout context
         var context = await _interaction.GetLogoutContextAsync(logoutId);
 
-        // If user is authenticated, show logout confirmation
-        if (User?.Identity?.IsAuthenticated == true)
+        // Get tenant info for branding
+        var tenant = HttpContext.Items["Tenant"] as Tenant;
+
+        ViewData["TenantName"] = tenant?.Name ?? "Identity Server";
+        ViewData["TenantColor"] = tenant?.PrimaryColor ?? "#1E40AF";
+        ViewData["TenantLogo"] = tenant?.LogoUrl;
+
+        // If we have a valid logout context (meaning a client initiated this), show confirmation
+        if (context != null && !string.IsNullOrEmpty(context.ClientId))
         {
             ViewData["LogoutId"] = logoutId;
-            ViewData["ClientName"] = context?.ClientName ?? "Application";
-            ViewData["PostLogoutRedirectUri"] = context?.PostLogoutRedirectUri;
+            ViewData["ClientName"] = context.ClientName ?? "Application";
+            ViewData["PostLogoutRedirectUri"] = context.PostLogoutRedirectUri;
+
+            // Show logout confirmation page
             return View();
         }
 
-        // User not authenticated, perform logout anyway
+        // No valid context, perform logout anyway
         return await PerformLogout(logoutId);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Logout(string? logoutId, string? returnUrl)
+    public async Task<IActionResult> Logout(LogoutInputModel model)
     {
-        _logger.LogInformation("Logout POST initiated with logoutId: {LogoutId}", logoutId);
-        return await PerformLogout(logoutId);
+        _logger.LogInformation("=== LOGOUT POST STARTED ===");
+        _logger.LogInformation("LogoutId from model: {LogoutId}", model.LogoutId ?? "NULL");
+        _logger.LogInformation("Form values:");
+
+        foreach (var key in Request.Form.Keys)
+        {
+            _logger.LogInformation("  {Key} = {Value}", key, Request.Form[key]);
+        }
+
+        return await PerformLogout(model.LogoutId);
     }
 
     private async Task<IActionResult> PerformLogout(string? logoutId)
     {
+        _logger.LogInformation("=== PERFORM LOGOUT STARTED ===");
+        _logger.LogInformation("LogoutId parameter: {LogoutId}", logoutId ?? "NULL");
+
         var context = await _interaction.GetLogoutContextAsync(logoutId);
 
-        if (User?.Identity?.IsAuthenticated == true)
-        {
-            var subjectId = User.GetSubjectId();
-            var displayName = User.GetDisplayName();
+        _logger.LogInformation("Context is NULL: {IsNull}", context == null);
 
-            // Sign out from Identity
-            await _signInManager.SignOutAsync();
+        if (context != null)
+        {
+            _logger.LogInformation("Context ClientId: {ClientId}", context.ClientId ?? "NULL");
+            _logger.LogInformation("Context PostLogoutRedirectUri: {Uri}", context.PostLogoutRedirectUri ?? "NULL");
+            _logger.LogInformation("Context SubjectId: {SubjectId}", context.SubjectId ?? "NULL");
+        }
+
+        // Try to get subject ID safely
+        string? subjectId = null;
+        try
+        {
+            subjectId = User?.Identity?.IsAuthenticated == true ? User.GetSubjectId() : null;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex, "Could not get SubjectId from User");
+        }
+
+        // Fallback to context SubjectId
+        subjectId ??= context?.SubjectId;
+
+        if (!string.IsNullOrEmpty(subjectId))
+        {
+            string? displayName = null;
+            try
+            {
+                displayName = User?.Identity?.IsAuthenticated == true ? User.GetDisplayName() : null;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Could not get DisplayName from User");
+            }
+
+            displayName ??= "Unknown User";
+
+            _logger.LogInformation("Signing out user: {DisplayName} ({SubjectId})", displayName, subjectId);
+
+            // Sign out from ASP.NET Core Identity (if authenticated locally)
+            if (User?.Identity?.IsAuthenticated == true)
+            {
+                await _signInManager.SignOutAsync();
+                _logger.LogInformation("User signed out from local authentication");
+            }
+
+            // Revoke user consent for this client (if clientId is available)
+            if (!string.IsNullOrEmpty(context?.ClientId))
+            {
+                try
+                {
+                    await _interaction.RevokeUserConsentAsync(context.ClientId);
+                    _logger.LogInformation("Revoked user consent for client: {ClientId}", context.ClientId);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogWarning(ex, "Could not revoke consent");
+                }
+            }
 
             // Raise logout event
             await _events.RaiseAsync(new UserLogoutSuccessEvent(subjectId, displayName));
 
             _logger.LogInformation("User {DisplayName} logged out successfully", displayName);
         }
+        else
+        {
+            _logger.LogInformation("No user session to logout - performing anonymous logout");
+        }
 
         // Get the post logout redirect URI
         var postLogoutUri = context?.PostLogoutRedirectUri;
 
-        if (!string.IsNullOrEmpty(postLogoutUri))
+        _logger.LogInformation("PostLogoutUri: {Uri}", postLogoutUri ?? "NULL");
+
+        // If no PostLogoutRedirectUri from context, construct tenant-specific React URL
+        if (string.IsNullOrEmpty(postLogoutUri))
         {
-            _logger.LogInformation("Redirecting to post logout URI: {PostLogoutUri}", postLogoutUri);
-            return Redirect(postLogoutUri);
+            var host = HttpContext.Request.Host.Value; // e.g., "tenant1.localhost:7140"
+
+            // Replace IdentityServer port with React port
+            var reactHost = host.Replace(":7140", ":3000");
+            postLogoutUri = $"https://{reactHost}";
+
+            _logger.LogInformation("No PostLogoutRedirectUri in context, using fallback: {Uri}", postLogoutUri);
         }
 
-        // Default redirect
-        _logger.LogInformation("No post logout URI, redirecting to home");
-        return RedirectToAction("Index", "Home");
+        _logger.LogInformation("Redirecting to: {PostLogoutUri}", postLogoutUri);
+        return Redirect(postLogoutUri);
     }
 
     #endregion
@@ -335,6 +453,11 @@ public class AccountController : Controller
     public IActionResult LoginWith2fa(string returnUrl, bool rememberMe)
     {
         return View();
+    }
+
+    public class LogoutInputModel
+    {
+        public string? LogoutId { get; set; }
     }
 
     #endregion

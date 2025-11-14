@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PKqeC55NC/0=",
+  "dgSpecHash": "raEBuspZ0YM=",
   "success": true,
   "projectFilePath": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\IdentityServer.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "C:\\Users\\tuner\\.nuget\\packages\\duende.identitymodel\\7.1.0\\duende.identitymodel.7.1.0.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\duende.identityserver\\7.3.2\\duende.identityserver.7.3.2.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\duende.identityserver.aspnetidentity\\7.3.2\\duende.identityserver.aspnetidentity.7.3.2.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\duende.identityserver.entityframework\\7.3.2\\duende.identityserver.entityframework.7.3.2.nupkg.sha512",
+    "C:\\Users\\tuner\\.nuget\\packages\\duende.identityserver.entityframework.storage\\7.3.2\\duende.identityserver.entityframework.storage.7.3.2.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\duende.identityserver.storage\\7.3.2\\duende.identityserver.storage.7.3.2.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\tuner\\.nuget\\packages\\identitymodel\\6.2.0\\identitymodel.6.2.0.nupkg.sha512",

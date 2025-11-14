@@ -143,7 +143,6 @@ C:\Project\du\DuendeIdentityServerDemo\IdentityServer\obj\Debug\net8.0\staticweb
 C:\Project\du\DuendeIdentityServerDemo\IdentityServer\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Project\du\DuendeIdentityServerDemo\IdentityServer\obj\Debug\net8.0\staticwebassets.development.json
 C:\Project\du\DuendeIdentityServerDemo\IdentityServer\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Project\du\DuendeIdentityServerDemo\IdentityServer\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Project\du\DuendeIdentityServerDemo\IdentityServer\obj\Debug\net8.0\Identity.FDBE6C83.Up2Date
 C:\Project\du\DuendeIdentityServerDemo\IdentityServer\obj\Debug\net8.0\IdentityServer.dll
 C:\Project\du\DuendeIdentityServerDemo\IdentityServer\obj\Debug\net8.0\refint\IdentityServer.dll
@@ -155,3 +154,8 @@ C:\Project\du\DuendeIdentityServerDemo\IdentityServer\obj\Debug\net8.0\IdentityS
 C:\Project\du\DuendeIdentityServerDemo\IdentityServer\bin\Debug\net8.0\IdentityServer.staticwebassets.runtime.json
 C:\Project\du\DuendeIdentityServerDemo\IdentityServer\bin\Debug\net8.0\IdentityModel.dll
 C:\Project\du\DuendeIdentityServerDemo\IdentityServer\bin\Debug\net8.0\keys\is-signing-key-1D9886556BCBCEAF8977B155986024F2.json
+C:\Project\du\DuendeIdentityServerDemo\IdentityServer\bin\Debug\net8.0\Duende.IdentityServer.EntityFramework.dll
+C:\Project\du\DuendeIdentityServerDemo\IdentityServer\bin\Debug\net8.0\Duende.IdentityServer.EntityFramework.Storage.dll
+C:\Project\du\DuendeIdentityServerDemo\IdentityServer\obj\Debug\net8.0\IdentityServer.sourcelink.json
+C:\Project\du\DuendeIdentityServerDemo\IdentityServer\bin\Debug\net8.0\global.json
+C:\Project\du\DuendeIdentityServerDemo\IdentityServer\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

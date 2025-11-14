@@ -1,24 +1,47 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import AdminDashboard from './pages/AdminDashboard';
 import './App.css';
 
-function App() {
+function HomePage() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [tenantInfo, setTenantInfo] = useState(null);
 
-  // API Base URL
-  const API_BASE_URL = 'https://localhost:5001';
+  // Get tenant-aware API Base URL
+  const getApiBaseUrl = () => {
+    const host = window.location.host;
+    const port = window.location.port;
+    const bffHost = host.replace(`:${port}`, ':5001');
+    return `https://${bffHost}`;
+  };
 
-  // Fetch user info on component mount
+  const API_BASE_URL = getApiBaseUrl();
+
+  // Extract tenant info from hostname
   useEffect(() => {
-    checkAuthentication();
+    const host = window.location.hostname;
+    const parts = host.split('.');
+    
+    if (parts.length >= 2 && parts[0] !== 'localhost') {
+      const tenantId = parts[0];
+      setTenantInfo({
+        id: tenantId,
+        name: tenantId.charAt(0).toUpperCase() + tenantId.slice(1)
+      });
+    } else {
+      setTenantInfo({
+        id: 'default',
+        name: 'Default'
+      });
+    }
   }, []);
 
-  // Check if user is authenticated
-  const checkAuthentication = async () => {
+  const checkAuthentication = React.useCallback(async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${API_BASE_URL}/api/user`, {
+      const response = await fetch(`${API_BASE_URL}/bff/user`, {
         credentials: 'include',
         headers: {
           'X-CSRF': '1'
@@ -27,11 +50,8 @@ function App() {
 
       if (response.ok) {
         const data = await response.json();
-        if (data.isAuthenticated) {
-          setUser(data);
-        } else {
-          setUser(null);
-        }
+        console.log('User claims:', data);
+        setUser(data);
       } else {
         setUser(null);
       }
@@ -42,47 +62,23 @@ function App() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [API_BASE_URL]);
 
-  // Handle login - Use custom auth login endpoint
+  useEffect(() => {
+    checkAuthentication();
+  }, [checkAuthentication]);
+
   const handleLogin = () => {
-    // Redirect to custom login endpoint that will redirect back to React app
-    window.location.href = `${API_BASE_URL}/auth/login`;
+    window.location.href = `${API_BASE_URL}/bff/login`;
   };
 
-  // Handle logout - Use custom auth logout endpoint
   const handleLogout = () => {
-    // Redirect to custom logout endpoint that will redirect back to React app
-    window.location.href = `${API_BASE_URL}/auth/logout`;
+    window.location.href = `${API_BASE_URL}/bff/logout`;
   };
 
-  // Get user profile details
-  const getUserProfile = async () => {
-    try {
-      const response = await fetch(`${API_BASE_URL}/api/user/profile`, {
-        credentials: 'include',
-        headers: {
-          'X-CSRF': '1'
-        }
-      });
-
-      if (response.ok) {
-        const profileData = await response.json();
-        console.log('User Profile:', profileData);
-        alert('Check console for full profile details');
-      } else {
-        alert('Failed to get profile. Please login again.');
-      }
-    } catch (err) {
-      console.error('Error getting profile:', err);
-      alert('Error getting profile');
-    }
-  };
-
-  // Test API endpoint
   const testApi = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/api/api/test`, {
+      const response = await fetch(`${API_BASE_URL}/api/test`, {
         credentials: 'include',
         headers: {
           'X-CSRF': '1'
@@ -92,7 +88,7 @@ function App() {
       if (response.ok) {
         const data = await response.json();
         console.log('API Test Response:', data);
-        alert(`API Test Success! Message: ${data.message}`);
+        alert(`API Test Success! Message: ${JSON.stringify(data)}`);
       } else {
         alert('API test failed. Please login again.');
       }
@@ -113,15 +109,24 @@ function App() {
     );
   }
 
+  const isAuthenticated = user && user.length > 0;
+  const userName = isAuthenticated ? (user.find(c => c.type === 'name')?.value || 'User') : null;
+  const userEmail = isAuthenticated ? (user.find(c => c.type === 'email')?.value || '') : null;
+  const isAdmin = isAuthenticated && user.some(c => c.type === 'role' && c.value === 'Admin');
+
   return (
     <div className="App">
       <header className="App-header">
         <div className="header-content">
-          <h1>🔐 React BFF Demo</h1>
-          {user && user.isAuthenticated ? (
+          <h1>🔐 React BFF Demo - {tenantInfo?.name}</h1>
+          <div className="tenant-badge">
+            Tenant: {tenantInfo?.id}
+          </div>
+          {isAuthenticated ? (
             <div className="user-info">
               <span className="welcome-text">
-                Welcome, <strong>{user.username || user.claims?.name || 'User'}</strong>!
+                Welcome, <strong>{userName}</strong>!
+                {isAdmin && <span className="admin-badge">👑 Admin</span>}
               </span>
               <button onClick={handleLogout} className="btn btn-logout">
                 Logout
@@ -142,68 +147,61 @@ function App() {
           </div>
         )}
 
-        {user && user.isAuthenticated ? (
+        {isAuthenticated ? (
           <div className="authenticated-content">
             <div className="welcome-card">
-              <h2>🎉 You are logged in!</h2>
-              <p>Welcome to the React application with BFF authentication pattern.</p>
+              <h2>🎉 You are logged in to {tenantInfo?.name}!</h2>
+              <p>Welcome to the multi-tenant React application with BFF authentication pattern.</p>
             </div>
+
+            {isAdmin && (
+              <div className="admin-access-card">
+                <h3>🛡️ Admin Access</h3>
+                <p>You have administrative privileges. Access the admin dashboard to manage users and tenants.</p>
+                <a href="/admin" className="btn btn-admin-dashboard">
+                  Go to Admin Dashboard →
+                </a>
+              </div>
+            )}
 
             <div className="user-details-card">
               <h3>📋 User Information</h3>
               <div className="user-details">
                 <div className="detail-item">
-                  <span className="label">Username:</span>
-                  <span className="value">{user.username || 'N/A'}</span>
+                  <span className="label">Name:</span>
+                  <span className="value">{userName || 'N/A'}</span>
                 </div>
                 <div className="detail-item">
                   <span className="label">Email:</span>
-                  <span className="value">{user.email || 'N/A'}</span>
+                  <span className="value">{userEmail || 'N/A'}</span>
                 </div>
-                {user.claims && (
-                  <>
-                    <div className="detail-item">
-                      <span className="label">Name:</span>
-                      <span className="value">{user.claims.name || 'N/A'}</span>
-                    </div>
-                    <div className="detail-item">
-                      <span className="label">Phone:</span>
-                      <span className="value">{user.claims.phone_number || 'Not provided'}</span>
-                    </div>
-                    <div className="detail-item">
-                      <span className="label">Country:</span>
-                      <span className="value">{user.claims.country || 'Not provided'}</span>
-                    </div>
-                  </>
-                )}
+                <div className="detail-item">
+                  <span className="label">Tenant:</span>
+                  <span className="value">{tenantInfo?.id}</span>
+                </div>
               </div>
             </div>
 
             <div className="actions-card">
               <h3>🚀 Available Actions</h3>
               <div className="action-buttons">
-                <button onClick={getUserProfile} className="btn btn-action">
-                  Get Full Profile
-                </button>
                 <button onClick={testApi} className="btn btn-action">
                   Test API Endpoint
                 </button>
-                <button 
-                  onClick={() => window.open(`${API_BASE_URL}/Account/Profile`, '_blank')} 
-                  className="btn btn-action">
-                  View Profile Page
+                <button onClick={() => console.log('User claims:', user)} className="btn btn-action">
+                  View Claims in Console
                 </button>
               </div>
             </div>
 
-            {user.claims && (
+            {user && (
               <div className="claims-card">
                 <h3>🔑 User Claims</h3>
                 <div className="claims-list">
-                  {Object.entries(user.claims).map(([key, value]) => (
-                    <div key={key} className="claim-item">
-                      <span className="claim-key">{key}:</span>
-                      <span className="claim-value">{value}</span>
+                  {user.map((claim, index) => (
+                    <div key={index} className="claim-item">
+                      <span className="claim-key">{claim.type}:</span>
+                      <span className="claim-value">{claim.value}</span>
                     </div>
                   ))}
                 </div>
@@ -214,17 +212,18 @@ function App() {
           <div className="unauthenticated-content">
             <div className="login-card">
               <div className="lock-icon">🔒</div>
-              <h2>Welcome to React BFF Demo</h2>
-              <p>This application demonstrates the Backend-For-Frontend (BFF) pattern with:</p>
+              <h2>Welcome to {tenantInfo?.name} Portal</h2>
+              <p>This application demonstrates multi-tenant BFF pattern with:</p>
               <ul className="features-list">
-                <li>✅ Duende IdentityServer for authentication</li>
+                <li>✅ Tenant-specific IdentityServer</li>
+                <li>✅ Duende IdentityServer authentication</li>
                 <li>✅ ASP.NET Core BFF middleware</li>
                 <li>✅ React frontend with secure API calls</li>
                 <li>✅ Cookie-based authentication</li>
-                <li>✅ CSRF protection</li>
+                <li>✅ Complete tenant data isolation</li>
               </ul>
               <button onClick={handleLogin} className="btn btn-primary btn-large">
-                🔐 Login to Get Started
+                🔓 Login to Get Started
               </button>
             </div>
 
@@ -235,7 +234,7 @@ function App() {
                   <span className="step-number">1</span>
                   <div className="step-content">
                     <h4>Click Login</h4>
-                    <p>You'll be redirected to the Identity Server</p>
+                    <p>You'll be redirected to {tenantInfo?.name}'s Identity Server</p>
                   </div>
                 </div>
                 <div className="step">
@@ -249,7 +248,7 @@ function App() {
                   <span className="step-number">3</span>
                   <div className="step-content">
                     <h4>Access Protected Resources</h4>
-                    <p>Once authenticated, you can access all protected APIs</p>
+                    <p>Once authenticated, you can access tenant-specific APIs</p>
                   </div>
                 </div>
               </div>
@@ -259,18 +258,27 @@ function App() {
       </main>
 
       <footer className="App-footer">
-        <p>Built with React + ASP.NET Core + Duende IdentityServer</p>
+        <p>Built with React + ASP.NET Core BFF + Duende IdentityServer (Multi-Tenant)</p>
         <div className="footer-links">
-          <a href={`${API_BASE_URL}`} target="_blank" rel="noopener noreferrer">
+          <a href={API_BASE_URL} target="_blank" rel="noopener noreferrer">
             BFF Server
           </a>
           <span>•</span>
-          <a href="https://localhost:7140" target="_blank" rel="noopener noreferrer">
-            Identity Server
-          </a>
+          <span>Current Tenant: {tenantInfo?.id}</span>
         </div>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+      </Routes>
+    </Router>
   );
 }
 

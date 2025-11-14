@@ -51,17 +51,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Duende.AccessTokenManagement.OpenIdConnect": {
+            "Duende.BFF": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
-            "Duende.BFF": {
-              "target": "Package",
-              "version": "[2.1.0, )"
-            },
             "Duende.BFF.Yarp": {
               "target": "Package",
-              "version": "[2.1.0, )"
+              "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
               "target": "Package",
@@ -70,6 +66,10 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.21, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.6, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -95,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
