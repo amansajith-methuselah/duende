@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './AdminDashboard.css';
 
+/* eslint-disable no-restricted-globals */
+
 function AdminDashboard() {
   const [users, setUsers] = useState([]);
   const [tenants, setTenants] = useState([]);
@@ -8,6 +10,13 @@ function AdminDashboard() {
   const [error, setError] = useState(null);
   const [selectedTenant, setSelectedTenant] = useState('all');
   const [activeTab, setActiveTab] = useState('users');
+  const [showAddTenantModal, setShowAddTenantModal] = useState(false);
+  const [newTenant, setNewTenant] = useState({
+    tenantId: '',
+    name: '',
+    domain: '',
+    primaryColor: '#059669'
+  });
 
   const getApiBaseUrl = () => {
     const host = window.location.host;
@@ -27,20 +36,15 @@ function AdminDashboard() {
     setError(null);
     
     try {
-      // Fetch tenants
       const tenantsResponse = await fetch(`${API_BASE_URL}/api/admin/tenants`, {
         credentials: 'include',
         headers: { 'X-CSRF': '1' }
       });
 
-      if (!tenantsResponse.ok) {
-        throw new Error('Failed to fetch tenants');
-      }
-
+      if (!tenantsResponse.ok) throw new Error('Failed to fetch tenants');
       const tenantsData = await tenantsResponse.json();
       setTenants(tenantsData.tenants || []);
 
-      // Fetch users (filtered by tenant if selected)
       const usersUrl = selectedTenant === 'all' 
         ? `${API_BASE_URL}/api/admin/users`
         : `${API_BASE_URL}/api/admin/users?tenantId=${selectedTenant}`;
@@ -50,10 +54,7 @@ function AdminDashboard() {
         headers: { 'X-CSRF': '1' }
       });
 
-      if (!usersResponse.ok) {
-        throw new Error('Failed to fetch users');
-      }
-
+      if (!usersResponse.ok) throw new Error('Failed to fetch users');
       const usersData = await usersResponse.json();
       setUsers(usersData.users || []);
     } catch (err) {
@@ -65,6 +66,8 @@ function AdminDashboard() {
   };
 
   const handleLockUser = async (userId, lock) => {
+    if (!confirm(`Are you sure you want to ${lock ? 'lock' : 'unlock'} this user?`)) return;
+
     try {
       const response = await fetch(`${API_BASE_URL}/api/admin/users/${userId}/lock`, {
         method: 'POST',
@@ -76,16 +79,93 @@ function AdminDashboard() {
         body: JSON.stringify({ lock })
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to update user lock status');
-      }
-
-      // Refresh data
+      if (!response.ok) throw new Error('Failed to update user lock status');
       fetchData();
       alert(`User ${lock ? 'locked' : 'unlocked'} successfully`);
     } catch (err) {
       console.error('Error updating user:', err);
       alert('Failed to update user: ' + err.message);
+    }
+  };
+
+  const handleDeleteUser = async (userId, userName) => {
+    if (!confirm(`Are you sure you want to DELETE user "${userName}"? This action cannot be undone!`)) return;
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/admin/users/${userId}`, {
+        method: 'DELETE',
+        credentials: 'include',
+        headers: { 'X-CSRF': '1' }
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to delete user');
+      }
+
+      fetchData();
+      alert('User deleted successfully');
+    } catch (err) {
+      console.error('Error deleting user:', err);
+      alert('Failed to delete user: ' + err.message);
+    }
+  };
+
+  const handleDeleteTenant = async (tenantId, tenantName) => {
+    if (!confirm(`Are you sure you want to DELETE tenant "${tenantName}"? This will also delete the tenant's client configuration!`)) return;
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/admin/tenants/${tenantId}`, {
+        method: 'DELETE',
+        credentials: 'include',
+        headers: { 'X-CSRF': '1' }
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to delete tenant');
+      }
+
+      fetchData();
+      setSelectedTenant('all');
+      alert('Tenant deleted successfully');
+    } catch (err) {
+      console.error('Error deleting tenant:', err);
+      alert('Failed to delete tenant: ' + err.message);
+    }
+  };
+
+  const handleAddTenant = async (e) => {
+    e.preventDefault();
+
+    if (!newTenant.tenantId || !newTenant.name || !newTenant.domain) {
+      alert('Please fill in all required fields');
+      return;
+    }
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/admin/tenants`, {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF': '1'
+        },
+        body: JSON.stringify(newTenant)
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to create tenant');
+      }
+
+      fetchData();
+      setShowAddTenantModal(false);
+      setNewTenant({ tenantId: '', name: '', domain: '', primaryColor: '#059669' });
+      alert('Tenant created successfully! Remember to add it to your hosts file.');
+    } catch (err) {
+      console.error('Error creating tenant:', err);
+      alert('Failed to create tenant: ' + err.message);
     }
   };
 
@@ -107,15 +187,16 @@ function AdminDashboard() {
   return (
     <div className="admin-dashboard">
       <div className="admin-header">
-        <h1>🛡️ Admin Dashboard</h1>
-        <p>Manage users and tenants across the platform</p>
+        <div className="header-top">
+          <div>
+            <h1>🛡️ Admin Dashboard</h1>
+            <p>Manage users and tenants across the platform</p>
+          </div>
+          <a href="/" className="btn-back-home">← Back to Home</a>
+        </div>
       </div>
 
-      {error && (
-        <div className="error-banner">
-          ⚠️ {error}
-        </div>
-      )}
+      {error && <div className="error-banner">⚠️ {error}</div>}
 
       <div className="admin-tabs">
         <button 
@@ -192,21 +273,29 @@ function AdminDashboard() {
                       )}
                     </td>
                     <td>
-                      {user.isLockedOut ? (
+                      <div className="action-buttons-cell">
+                        {user.isLockedOut ? (
+                          <button 
+                            onClick={() => handleLockUser(user.id, false)}
+                            className="btn-unlock"
+                          >
+                            Unlock
+                          </button>
+                        ) : (
+                          <button 
+                            onClick={() => handleLockUser(user.id, true)}
+                            className="btn-lock"
+                          >
+                            Lock
+                          </button>
+                        )}
                         <button 
-                          onClick={() => handleLockUser(user.id, false)}
-                          className="btn-unlock"
+                          onClick={() => handleDeleteUser(user.id, user.userName)}
+                          className="btn-delete"
                         >
-                          Unlock
+                          Delete
                         </button>
-                      ) : (
-                        <button 
-                          onClick={() => handleLockUser(user.id, true)}
-                          className="btn-lock"
-                        >
-                          Lock
-                        </button>
-                      )}
+                      </div>
                     </td>
                   </tr>
                 ))}
@@ -220,6 +309,12 @@ function AdminDashboard() {
         <div className="tenants-section">
           <div className="section-header">
             <h2>Tenant Overview</h2>
+            <button 
+              onClick={() => setShowAddTenantModal(true)}
+              className="btn-add-tenant"
+            >
+              + Add New Tenant
+            </button>
           </div>
 
           <div className="tenants-grid">
@@ -245,14 +340,88 @@ function AdminDashboard() {
                     <span className="value">{tenant.userCount}</span>
                   </div>
                 </div>
-                <button 
-                  onClick={() => setSelectedTenant(tenant.tenantId)}
-                  className="btn-view-users"
-                >
-                  View Users
-                </button>
+                <div className="tenant-actions">
+                  <button 
+                    onClick={() => {
+                      setSelectedTenant(tenant.tenantId);
+                      setActiveTab('users');
+                    }}
+                    className="btn-view-users"
+                  >
+                    View Users
+                  </button>
+                  {tenant.tenantId !== 'admin' && (
+                    <button 
+                      onClick={() => handleDeleteTenant(tenant.tenantId, tenant.name)}
+                      className="btn-delete-tenant"
+                    >
+                      Delete
+                    </button>
+                  )}
+                </div>
               </div>
             ))}
+          </div>
+        </div>
+      )}
+
+      {showAddTenantModal && (
+        <div className="modal-overlay" onClick={() => setShowAddTenantModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>Add New Tenant</h2>
+              <button onClick={() => setShowAddTenantModal(false)} className="modal-close">×</button>
+            </div>
+            <form onSubmit={handleAddTenant} className="tenant-form">
+              <div className="form-group">
+                <label>Tenant ID *</label>
+                <input
+                  type="text"
+                  value={newTenant.tenantId}
+                  onChange={(e) => setNewTenant({...newTenant, tenantId: e.target.value})}
+                  placeholder="e.g., tenant4"
+                  required
+                />
+                <small>Lowercase, no spaces. Used in subdomain.</small>
+              </div>
+              <div className="form-group">
+                <label>Tenant Name *</label>
+                <input
+                  type="text"
+                  value={newTenant.name}
+                  onChange={(e) => setNewTenant({...newTenant, name: e.target.value})}
+                  placeholder="e.g., Tenant Four Corporation"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label>Domain *</label>
+                <input
+                  type="text"
+                  value={newTenant.domain}
+                  onChange={(e) => setNewTenant({...newTenant, domain: e.target.value})}
+                  placeholder="e.g., tenant4.localhost:7140"
+                  required
+                />
+                <small>Format: tenantId.localhost:7140</small>
+              </div>
+              <div className="form-group">
+                <label>Primary Color</label>
+                <input
+                  type="color"
+                  value={newTenant.primaryColor}
+                  onChange={(e) => setNewTenant({...newTenant, primaryColor: e.target.value})}
+                />
+              </div>
+              <div className="modal-actions">
+                <button type="button" onClick={() => setShowAddTenantModal(false)} className="btn-cancel">
+                  Cancel
+                </button>
+                <button type="submit" className="btn-submit">
+                  Create Tenant
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       )}

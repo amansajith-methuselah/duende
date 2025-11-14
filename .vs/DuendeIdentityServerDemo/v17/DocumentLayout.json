@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Project\\du\\DuendeIdentityServerDemo\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\bffserver\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|solutionrelative:bffserver\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\bffserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|solutionrelative:bffserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\bffserver\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EDF450F-B21D-4DC7-9105-965A956E4599}|BffServer\\BffServer.csproj|solutionrelative:bffserver\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\identityserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -233,8 +233,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\appsettings.json",
+              "RelativeDocumentMoniker": "BffServer\\appsettings.json",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\appsettings.json",
+              "RelativeToolTip": "BffServer\\appsettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-14T05:24:56.966Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
@@ -242,25 +256,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\appsettings.json",
-              "RelativeDocumentMoniker": "BffServer\\appsettings.json",
-              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\appsettings.json",
-              "RelativeToolTip": "BffServer\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-14T05:24:56.966Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "BffServer\\Controllers\\AdminController.cs",
               "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\AdminController.cs",
               "RelativeToolTip": "BffServer\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAPoBAAAAAAAAAAAYwAgCAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-14T05:22:36.429Z",
               "EditorCaption": ""
@@ -275,12 +276,11 @@
               "RelativeToolTip": "BffServer\\BffServer.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-06T06:36:19.762Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T06:36:19.762Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\appsettings.json",
               "RelativeDocumentMoniker": "IdentityServer\\appsettings.json",
@@ -288,8 +288,7 @@
               "RelativeToolTip": "IdentityServer\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-05T05:22:41.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T05:22:41.06Z"
             },
             {
               "$type": "Document",
@@ -301,8 +300,7 @@
               "RelativeToolTip": "IdentityServer\\Program.cs",
               "ViewState": "AgIAAEUAAAAAAAAAAAAAAFkAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T05:52:02.622Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T05:52:02.622Z"
             },
             {
               "$type": "Document",
@@ -314,8 +312,7 @@
               "RelativeToolTip": "BffServer\\Controllers\\AuthController.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAAwD4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T07:09:10.482Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T07:09:10.482Z"
             },
             {
               "$type": "Document",
@@ -327,8 +324,7 @@
               "RelativeToolTip": "IdentityServer\\IdentityServer.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-05T05:20:22.333Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T05:20:22.333Z"
             },
             {
               "$type": "Document",
@@ -340,8 +336,7 @@
               "RelativeToolTip": "BffServer\\Program.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAUwDgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T07:04:09.104Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T07:04:09.104Z"
             },
             {
               "$type": "Document",
@@ -353,8 +348,7 @@
               "RelativeToolTip": "IdentityServer\\global.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-12T05:52:36.687Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-12T05:52:36.687Z"
             },
             {
               "$type": "Document",
@@ -366,8 +360,7 @@
               "RelativeToolTip": "IdentityServer\\Services\\ProfileService.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAQwCMAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T10:31:11.991Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-13T10:31:11.991Z"
             },
             {
               "$type": "Document",
@@ -379,8 +372,7 @@
               "RelativeToolTip": "IdentityServer\\Views\\Home\\Error.cshtml",
               "ViewState": "AgIAACcAAAAAAAAAAAAYwDUAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-14T04:58:45.786Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T04:58:45.786Z"
             },
             {
               "$type": "Document",
@@ -392,8 +384,7 @@
               "RelativeToolTip": "IdentityServer\\Controllers\\AccountController.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAAQwFQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T05:55:49.225Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T05:55:49.225Z"
             },
             {
               "$type": "Document",
@@ -405,8 +396,7 @@
               "RelativeToolTip": "IdentityServer\\Services\\TenantAwareUserValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T06:38:15.022Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-13T06:38:15.022Z"
             },
             {
               "$type": "Document",
@@ -418,8 +408,7 @@
               "RelativeToolTip": "BffServer\\BffServer.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-11-06T06:42:01.44Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T06:42:01.44Z"
             },
             {
               "$type": "Document",
@@ -431,8 +420,7 @@
               "RelativeToolTip": "IdentityServer\\Services\\TenantAwareClientStore.cs",
               "ViewState": "AgIAAD4AAAAAAAAAAAAYwFcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T06:20:04.183Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-11T06:20:04.183Z"
             },
             {
               "$type": "Document",
@@ -444,8 +432,7 @@
               "RelativeToolTip": "IdentityServer\\Views\\Account\\Logout.cshtml",
               "ViewState": "AgIAAEkAAAAAAAAAAAAQwGIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-06T07:15:20.336Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T07:15:20.336Z"
             },
             {
               "$type": "Document",
@@ -457,8 +444,7 @@
               "RelativeToolTip": "..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.307\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets",
               "ViewState": "AgIAAJoBAAAAAAAAAAAgwKgBAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-11-12T05:42:24.962Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-12T05:42:24.962Z"
             },
             {
               "$type": "Document",
@@ -470,8 +456,7 @@
               "RelativeToolTip": "IdentityServer\\Middleware\\TenantResolutionMiddleware.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T11:26:45.584Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-10T11:26:45.584Z"
             },
             {
               "$type": "Document",
@@ -483,8 +468,7 @@
               "RelativeToolTip": "IdentityServer\\Data\\ApplicationUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T05:21:42.12Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T05:21:42.12Z"
             },
             {
               "$type": "Document",
@@ -496,8 +480,7 @@
               "RelativeToolTip": "IdentityServer\\Views\\Account\\Login.cshtml",
               "ViewState": "AgIAAI0AAAAAAAAAAAAIwK4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-06T05:58:18.145Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T05:58:18.145Z"
             },
             {
               "$type": "Document",
@@ -509,8 +492,7 @@
               "RelativeToolTip": "IdentityServer\\Data\\Tenant.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T11:22:39.147Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-10T11:22:39.147Z"
             },
             {
               "$type": "Document",
@@ -522,8 +504,7 @@
               "RelativeToolTip": "IdentityServer\\SeedDataMultiTenant.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAxwHYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T11:29:42.605Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-10T11:29:42.605Z"
             },
             {
               "$type": "Document",
@@ -535,8 +516,7 @@
               "RelativeToolTip": "IdentityServer\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T05:22:12.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T05:22:12.173Z"
             },
             {
               "$type": "Document",
@@ -548,8 +528,7 @@
               "RelativeToolTip": "BffServer\\Controllers\\ApiController.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAYwHsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T06:09:56.258Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T06:09:56.258Z"
             },
             {
               "$type": "Document",
@@ -561,8 +540,7 @@
               "RelativeToolTip": "ClientApp\\ClientApp.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-05T06:29:23.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T06:29:23.084Z"
             },
             {
               "$type": "Document",
@@ -574,8 +552,7 @@
               "RelativeToolTip": "IdentityServer\\Config.cs",
               "ViewState": "AgIAAD8AAAAAAAAAAAAQwEkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T05:53:05.463Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T05:53:05.463Z"
             },
             {
               "$type": "Document",
@@ -587,8 +564,7 @@
               "RelativeToolTip": "BffServer\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAQwEYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T06:06:34.045Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T06:06:34.045Z"
             },
             {
               "$type": "Document",
@@ -600,8 +576,7 @@
               "RelativeToolTip": "BffServer\\Controllers\\UserController.cs",
               "ViewState": "AgIAAEYAAAAAAAAAAAAQwF8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T06:07:23.405Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T06:07:23.405Z"
             },
             {
               "$type": "Document",
@@ -613,8 +588,7 @@
               "RelativeToolTip": "BffServer\\Views\\Account\\Profile.cshtml",
               "ViewState": "AgIAABcAAAAAAAAAAAAQwDAAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-06T06:14:53.674Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T06:14:53.674Z"
             },
             {
               "$type": "Document",
@@ -626,8 +600,7 @@
               "RelativeToolTip": "BffServer\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAACgAAAAAAAAAAAAQwEEAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-06T06:11:52.801Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T06:11:52.801Z"
             },
             {
               "$type": "Document",
@@ -639,8 +612,7 @@
               "RelativeToolTip": "BffServer\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAADkAAAAAAAAAAAAQwFIAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-06T06:12:02.916Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T06:12:02.916Z"
             },
             {
               "$type": "Document",
@@ -652,8 +624,7 @@
               "RelativeToolTip": "BffServer\\Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-06T06:12:14.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T06:12:14.034Z"
             },
             {
               "$type": "Document",
@@ -665,8 +636,7 @@
               "RelativeToolTip": "BffServer\\Views\\Account\\AccessDenied.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-06T06:11:45.303Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T06:11:45.303Z"
             },
             {
               "$type": "Document",
@@ -678,8 +648,7 @@
               "RelativeToolTip": "BffServer\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAQwCYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T06:06:26.498Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T06:06:26.498Z"
             },
             {
               "$type": "Document",
@@ -691,8 +660,7 @@
               "RelativeToolTip": "BffServer\\Models\\ErrorViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T06:10:19.509Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T06:10:19.509Z"
             },
             {
               "$type": "Document",
@@ -704,8 +672,7 @@
               "RelativeToolTip": "BffServer\\Models\\UserViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T06:10:07.337Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T06:10:07.337Z"
             },
             {
               "$type": "Document",
@@ -717,8 +684,7 @@
               "RelativeToolTip": "IdentityServer\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-06T06:03:59.368Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T06:03:59.368Z"
             },
             {
               "$type": "Document",
@@ -730,8 +696,7 @@
               "RelativeToolTip": "IdentityServer\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-06T06:00:48.134Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T06:00:48.134Z"
             },
             {
               "$type": "Document",
@@ -743,8 +708,7 @@
               "RelativeToolTip": "IdentityServer\\Views\\Account\\AccessDenied.cshtml",
               "ViewState": "AgIAACYAAAAAAAAAAIBJwCkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-06T06:00:13.951Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T06:00:13.951Z"
             },
             {
               "$type": "Document",
@@ -756,8 +720,7 @@
               "RelativeToolTip": "IdentityServer\\Views\\Account\\RegisterSuccess.cshtml",
               "ViewState": "AgIAAC4AAAAAAAAAAAAQwEsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-06T05:59:42.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T05:59:42.708Z"
             },
             {
               "$type": "Document",
@@ -769,8 +732,7 @@
               "RelativeToolTip": "IdentityServer\\Views\\Account\\Register.cshtml",
               "ViewState": "AgIAAJAAAAAAAAAAAAAQwKwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-06T05:59:22.941Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T05:59:22.941Z"
             },
             {
               "$type": "Document",
@@ -782,8 +744,7 @@
               "RelativeToolTip": "IdentityServer\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-06T05:57:33.183Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T05:57:33.183Z"
             },
             {
               "$type": "Document",
@@ -795,8 +756,7 @@
               "RelativeToolTip": "IdentityServer\\Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-06T05:56:59.329Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T05:56:59.329Z"
             },
             {
               "$type": "Document",
@@ -808,8 +768,7 @@
               "RelativeToolTip": "IdentityServer\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T05:56:14.119Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T05:56:14.119Z"
             },
             {
               "$type": "Document",
@@ -821,8 +780,7 @@
               "RelativeToolTip": "IdentityServer\\Models\\AccountViewModels\\LogoutViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T05:54:35.596Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T05:54:35.596Z"
             },
             {
               "$type": "Document",
@@ -834,8 +792,7 @@
               "RelativeToolTip": "IdentityServer\\Models\\AccountViewModels\\RegisterViewModel.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAQwC4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T05:51:14.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T05:51:14.79Z"
             },
             {
               "$type": "Document",
@@ -847,8 +804,7 @@
               "RelativeToolTip": "IdentityServer\\Models\\AccountViewModels\\LoginViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T05:49:09.287Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T05:49:09.287Z"
             },
             {
               "$type": "Document",
@@ -860,8 +816,7 @@
               "RelativeToolTip": "IdentityServer\\wwwroot\\css\\site.scss",
               "ViewState": "AgIAAF4AAAAAAAAAAAAmwHYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
-              "WhenOpened": "2025-11-05T10:27:02.507Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T10:27:02.507Z"
             },
             {
               "$type": "Document",
@@ -873,8 +828,7 @@
               "RelativeToolTip": "BffServer\\wwwroot\\logout.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-05T10:14:54.07Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T10:14:54.07Z"
             },
             {
               "$type": "Document",
@@ -886,8 +840,7 @@
               "RelativeToolTip": "ClientApp\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T06:32:37.66Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T06:32:37.66Z"
             },
             {
               "$type": "Document",
@@ -899,8 +852,7 @@
               "RelativeToolTip": "BffServer\\wwwroot\\index.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-05T09:39:46.043Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T09:39:46.043Z"
             },
             {
               "$type": "Document",
@@ -912,8 +864,7 @@
               "RelativeToolTip": "ClientApp\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAIAAAAAAAAAAABRwBgAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-05T06:31:01.7Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T06:31:01.7Z"
             },
             {
               "$type": "Document",
@@ -925,8 +876,7 @@
               "RelativeToolTip": "BffServer\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAUAAAAAAAAAAABRwBoAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-05T07:06:09.157Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T07:06:09.157Z"
             },
             {
               "$type": "Document",
@@ -938,8 +888,7 @@
               "RelativeToolTip": "ClientApp\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAABMAAAAAAAAAAAAuwCUAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T06:40:33.203Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T06:40:33.203Z"
             },
             {
               "$type": "Document",
@@ -951,8 +900,7 @@
               "RelativeToolTip": "ClientApp\\Program.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAIBJwBwAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T06:27:17.611Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T06:27:17.611Z"
             },
             {
               "$type": "Document",
@@ -964,8 +912,7 @@
               "RelativeToolTip": "IdentityServer\\SeedData.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAQwCsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T06:04:53.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T06:04:53.776Z"
             }
           ]
         }

@@ -177,10 +177,356 @@ namespace BffServer.Controllers
                 return StatusCode(500, new { success = false, error = ex.Message });
             }
         }
+
+        // DELETE: api/admin/users/{userId}
+        [HttpDelete("users/{userId}")]
+        public async Task<IActionResult> DeleteUser(string userId)
+        {
+            try
+            {
+                var connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    using (var transaction = connection.BeginTransaction())
+                    {
+                        try
+                        {
+                            // Delete user claims
+                            await ExecuteNonQueryAsync(connection, transaction,
+                                "DELETE FROM AspNetUserClaims WHERE UserId = @UserId", userId);
+
+                            // Delete user roles
+                            await ExecuteNonQueryAsync(connection, transaction,
+                                "DELETE FROM AspNetUserRoles WHERE UserId = @UserId", userId);
+
+                            // Delete user logins
+                            await ExecuteNonQueryAsync(connection, transaction,
+                                "DELETE FROM AspNetUserLogins WHERE UserId = @UserId", userId);
+
+                            // Delete user tokens
+                            await ExecuteNonQueryAsync(connection, transaction,
+                                "DELETE FROM AspNetUserTokens WHERE UserId = @UserId", userId);
+
+                            // Delete the user
+                            var rowsAffected = await ExecuteNonQueryAsync(connection, transaction,
+                                "DELETE FROM AspNetUsers WHERE Id = @UserId", userId);
+
+                            if (rowsAffected == 0)
+                            {
+                                transaction.Rollback();
+                                return NotFound(new { success = false, error = "User not found" });
+                            }
+
+                            transaction.Commit();
+                            return Ok(new { success = true, message = "User deleted successfully" });
+                        }
+                        catch
+                        {
+                            transaction.Rollback();
+                            throw;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error deleting user");
+                return StatusCode(500, new { success = false, error = ex.Message });
+            }
+        }
+
+        // POST: api/admin/tenants
+        [HttpPost("tenants")]
+        public async Task<IActionResult> CreateTenant([FromBody] CreateTenantRequest request)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(request.TenantId) ||
+                    string.IsNullOrWhiteSpace(request.Name) ||
+                    string.IsNullOrWhiteSpace(request.Domain))
+                {
+                    return BadRequest(new { success = false, error = "TenantId, Name, and Domain are required" });
+                }
+
+                var connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    // Check if tenant already exists
+                    var checkQuery = "SELECT COUNT(*) FROM Tenants WHERE TenantId = @TenantId";
+                    using (var checkCommand = new SqlCommand(checkQuery, connection))
+                    {
+                        checkCommand.Parameters.AddWithValue("@TenantId", request.TenantId);
+                        var exists = (int)await checkCommand.ExecuteScalarAsync() > 0;
+
+                        if (exists)
+                        {
+                            return Conflict(new { success = false, error = "Tenant with this ID already exists" });
+                        }
+                    }
+
+                    // Insert new tenant
+                    var insertQuery = @"
+                        INSERT INTO Tenants (TenantId, Name, Domain, IsActive, PrimaryColor, CreatedAt, UpdatedAt)
+                        VALUES (@TenantId, @Name, @Domain, 1, @PrimaryColor, GETUTCDATE(), GETUTCDATE())";
+
+                    using (var insertCommand = new SqlCommand(insertQuery, connection))
+                    {
+                        insertCommand.Parameters.AddWithValue("@TenantId", request.TenantId);
+                        insertCommand.Parameters.AddWithValue("@Name", request.Name);
+                        insertCommand.Parameters.AddWithValue("@Domain", request.Domain);
+                        insertCommand.Parameters.AddWithValue("@PrimaryColor", request.PrimaryColor ?? "#059669");
+
+                        await insertCommand.ExecuteNonQueryAsync();
+                    }
+
+                    // Create BFF client for the new tenant
+                    await CreateTenantClient(connection, request.TenantId);
+                }
+
+                return Ok(new { success = true, message = "Tenant created successfully" });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error creating tenant");
+                return StatusCode(500, new { success = false, error = ex.Message });
+            }
+        }
+
+        // DELETE: api/admin/tenants/{tenantId}
+        [HttpDelete("tenants/{tenantId}")]
+        public async Task<IActionResult> DeleteTenant(string tenantId)
+        {
+            try
+            {
+                // Prevent deleting admin tenant
+                if (tenantId.Equals("admin", StringComparison.OrdinalIgnoreCase))
+                {
+                    return BadRequest(new { success = false, error = "Cannot delete the admin tenant" });
+                }
+
+                var connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    // Check if tenant has users
+                    var checkUsersQuery = "SELECT COUNT(*) FROM AspNetUsers WHERE TenantId = @TenantId";
+                    using (var checkCommand = new SqlCommand(checkUsersQuery, connection))
+                    {
+                        checkCommand.Parameters.AddWithValue("@TenantId", tenantId);
+                        var userCount = (int)await checkCommand.ExecuteScalarAsync();
+
+                        if (userCount > 0)
+                        {
+                            return BadRequest(new
+                            {
+                                success = false,
+                                error = $"Cannot delete tenant with {userCount} user(s). Delete users first."
+                            });
+                        }
+                    }
+
+                    using (var transaction = connection.BeginTransaction())
+                    {
+                        try
+                        {
+                            // Get client ID
+                            var getClientIdQuery = "SELECT Id FROM Clients WHERE TenantId = @TenantId";
+                            int? clientId = null;
+
+                            using (var getClientCommand = new SqlCommand(getClientIdQuery, connection, transaction))
+                            {
+                                getClientCommand.Parameters.AddWithValue("@TenantId", tenantId);
+                                var result = await getClientCommand.ExecuteScalarAsync();
+                                if (result != null && result != DBNull.Value)
+                                {
+                                    clientId = Convert.ToInt32(result);
+                                }
+                            }
+
+                            // Delete client-related data if client exists
+                            if (clientId.HasValue)
+                            {
+                                await ExecuteNonQueryAsync(connection, transaction,
+                                    "DELETE FROM ClientGrantTypes WHERE ClientId = @ClientId", clientId.Value.ToString());
+                                await ExecuteNonQueryAsync(connection, transaction,
+                                    "DELETE FROM ClientScopes WHERE ClientId = @ClientId", clientId.Value.ToString());
+                                await ExecuteNonQueryAsync(connection, transaction,
+                                    "DELETE FROM ClientRedirectUris WHERE ClientId = @ClientId", clientId.Value.ToString());
+                                await ExecuteNonQueryAsync(connection, transaction,
+                                    "DELETE FROM ClientPostLogoutRedirectUris WHERE ClientId = @ClientId", clientId.Value.ToString());
+                                await ExecuteNonQueryAsync(connection, transaction,
+                                    "DELETE FROM ClientCorsOrigins WHERE ClientId = @ClientId", clientId.Value.ToString());
+                                await ExecuteNonQueryAsync(connection, transaction,
+                                    "DELETE FROM Clients WHERE Id = @ClientId", clientId.Value.ToString());
+                            }
+
+                            // Delete tenant
+                            var rowsAffected = await ExecuteNonQueryAsync(connection, transaction,
+                                "DELETE FROM Tenants WHERE TenantId = @TenantId", tenantId);
+
+                            if (rowsAffected == 0)
+                            {
+                                transaction.Rollback();
+                                return NotFound(new { success = false, error = "Tenant not found" });
+                            }
+
+                            transaction.Commit();
+                            return Ok(new { success = true, message = "Tenant deleted successfully" });
+                        }
+                        catch
+                        {
+                            transaction.Rollback();
+                            throw;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error deleting tenant");
+                return StatusCode(500, new { success = false, error = ex.Message });
+            }
+        }
+
+        // Helper method to execute non-query commands
+        private async Task<int> ExecuteNonQueryAsync(SqlConnection connection, SqlTransaction transaction, string query, string paramValue)
+        {
+            using (var command = new SqlCommand(query, connection, transaction))
+            {
+                // Determine parameter name from query
+                var paramName = query.Contains("@UserId") ? "@UserId" :
+                               query.Contains("@ClientId") ? "@ClientId" :
+                               "@TenantId";
+                command.Parameters.AddWithValue(paramName, paramValue);
+                return await command.ExecuteNonQueryAsync();
+            }
+        }
+
+        // Helper method to create client for new tenant
+        private async Task CreateTenantClient(SqlConnection connection, string tenantId)
+        {
+            // Copy from an existing tenant client (tenant1)
+            var copyClientQuery = @"
+                INSERT INTO Clients (
+                    ClientId, ClientName, Enabled, ProtocolType, RequireClientSecret, RequireConsent,
+                    AllowRememberConsent, AlwaysIncludeUserClaimsInIdToken, RequirePkce, AllowPlainTextPkce,
+                    RequireRequestObject, AllowAccessTokensViaBrowser, RequireDPoP, DPoPValidationMode,
+                    DPoPClockSkew, FrontChannelLogoutSessionRequired, BackChannelLogoutSessionRequired,
+                    AllowOfflineAccess, IdentityTokenLifetime, AllowedIdentityTokenSigningAlgorithms,
+                    AccessTokenLifetime, AuthorizationCodeLifetime, ConsentLifetime, AbsoluteRefreshTokenLifetime,
+                    SlidingRefreshTokenLifetime, RefreshTokenUsage, UpdateAccessTokenClaimsOnRefresh,
+                    RefreshTokenExpiration, AccessTokenType, EnableLocalLogin, IncludeJwtId,
+                    AlwaysSendClientClaims, PushedAuthorizationLifetime, RequirePushedAuthorization,
+                    TenantId, DeviceCodeLifetime, CibaLifetime, PollingInterval, CoordinateLifetimeWithUserSession,
+                    Description, ClientUri, LogoUri, ClientClaimsPrefix, PairWiseSubjectSalt, InitiateLoginUri,
+                    UserSsoLifetime, UserCodeType, NonEditable, Created, Updated, LastAccessed
+                )
+                SELECT 
+                    @NewClientId, @NewClientName, Enabled, ProtocolType, RequireClientSecret, RequireConsent,
+                    AllowRememberConsent, AlwaysIncludeUserClaimsInIdToken, RequirePkce, AllowPlainTextPkce,
+                    RequireRequestObject, AllowAccessTokensViaBrowser, RequireDPoP, DPoPValidationMode,
+                    DPoPClockSkew, FrontChannelLogoutSessionRequired, BackChannelLogoutSessionRequired,
+                    AllowOfflineAccess, IdentityTokenLifetime, AllowedIdentityTokenSigningAlgorithms,
+                    AccessTokenLifetime, AuthorizationCodeLifetime, ConsentLifetime, AbsoluteRefreshTokenLifetime,
+                    SlidingRefreshTokenLifetime, RefreshTokenUsage, UpdateAccessTokenClaimsOnRefresh,
+                    RefreshTokenExpiration, AccessTokenType, EnableLocalLogin, IncludeJwtId,
+                    AlwaysSendClientClaims, PushedAuthorizationLifetime, RequirePushedAuthorization,
+                    @TenantId, DeviceCodeLifetime, CibaLifetime, PollingInterval, CoordinateLifetimeWithUserSession,
+                    Description, ClientUri, LogoUri, ClientClaimsPrefix, PairWiseSubjectSalt, InitiateLoginUri,
+                    UserSsoLifetime, UserCodeType, NonEditable, GETUTCDATE(), GETUTCDATE(), NULL
+                FROM Clients 
+                WHERE ClientId = 'bff-client-tenant1';
+
+                SELECT CAST(SCOPE_IDENTITY() AS INT);";
+
+            using (var command = new SqlCommand(copyClientQuery, connection))
+            {
+                command.Parameters.AddWithValue("@NewClientId", $"bff-client-{tenantId}");
+                command.Parameters.AddWithValue("@NewClientName", $"BFF Client for {tenantId}");
+                command.Parameters.AddWithValue("@TenantId", tenantId);
+
+                var newClientId = (int)await command.ExecuteScalarAsync();
+
+                // Copy grant types, scopes, etc.
+                await CopyClientConfiguration(connection, newClientId, tenantId);
+            }
+        }
+
+        private async Task CopyClientConfiguration(SqlConnection connection, int newClientId, string tenantId)
+        {
+            var tenant1ClientId = await GetClientId(connection, "bff-client-tenant1");
+
+            // Copy grant types
+            await ExecuteCopyQuery(connection,
+                "INSERT INTO ClientGrantTypes (ClientId, GrantType) SELECT @NewClientId, GrantType FROM ClientGrantTypes WHERE ClientId = @SourceClientId",
+                newClientId, tenant1ClientId);
+
+            // Copy scopes
+            await ExecuteCopyQuery(connection,
+                "INSERT INTO ClientScopes (ClientId, Scope) SELECT @NewClientId, Scope FROM ClientScopes WHERE ClientId = @SourceClientId",
+                newClientId, tenant1ClientId);
+
+            // Add redirect URIs
+            await ExecuteInsertUri(connection, "ClientRedirectUris", "RedirectUri", newClientId, $"https://{tenantId}.localhost:5001/signin-oidc");
+
+            // Add post-logout redirect URIs
+            await ExecuteInsertUri(connection, "ClientPostLogoutRedirectUris", "PostLogoutRedirectUri", newClientId, $"https://{tenantId}.localhost:3000");
+            await ExecuteInsertUri(connection, "ClientPostLogoutRedirectUris", "PostLogoutRedirectUri", newClientId, $"https://{tenantId}.localhost:5001/signout-callback-oidc");
+
+            // Add CORS origins
+            await ExecuteInsertUri(connection, "ClientCorsOrigins", "Origin", newClientId, $"https://{tenantId}.localhost:3000");
+            await ExecuteInsertUri(connection, "ClientCorsOrigins", "Origin", newClientId, $"https://{tenantId}.localhost:5001");
+        }
+
+        private async Task<int> GetClientId(SqlConnection connection, string clientId)
+        {
+            using (var command = new SqlCommand("SELECT Id FROM Clients WHERE ClientId = @ClientId", connection))
+            {
+                command.Parameters.AddWithValue("@ClientId", clientId);
+                return (int)await command.ExecuteScalarAsync();
+            }
+        }
+
+        private async Task ExecuteCopyQuery(SqlConnection connection, string query, int newClientId, int sourceClientId)
+        {
+            using (var command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@NewClientId", newClientId);
+                command.Parameters.AddWithValue("@SourceClientId", sourceClientId);
+                await command.ExecuteNonQueryAsync();
+            }
+        }
+
+        private async Task ExecuteInsertUri(SqlConnection connection, string tableName, string columnName, int clientId, string value)
+        {
+            var query = $"INSERT INTO {tableName} (ClientId, {columnName}) VALUES (@ClientId, @Value)";
+            using (var command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@ClientId", clientId);
+                command.Parameters.AddWithValue("@Value", value);
+                await command.ExecuteNonQueryAsync();
+            }
+        }
     }
 
     public class LockUserRequest
     {
         public bool Lock { get; set; }
+    }
+
+    public class CreateTenantRequest
+    {
+        public string TenantId { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
+        public string Domain { get; set; } = string.Empty;
+        public string? PrimaryColor { get; set; }
     }
 }
