@@ -11,4 +11,10 @@ public class Tenant
     public bool IsActive { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
+
+    // Multi-Database Configuration
+    public bool UseOwnDatabase { get; set; }
+    public string? CustomConnectionString { get; set; }
+    public string? DatabaseMigrationStatus { get; set; }
+    public DateTime? LastMigrationDate { get; set; }
 }

@@ -147,6 +147,58 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BffServer.Controllers.ClaimsController",
+    "Method": "GetAllClaims",
+    "RelativePath": "api/Claims",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BffServer.Controllers.ClaimsController",
+    "Method": "GetClaimByType",
+    "RelativePath": "api/Claims/{claimType}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "claimType",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BffServer.Controllers.ClaimsController",
+    "Method": "SearchClaims",
+    "RelativePath": "api/Claims/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BffServer.Controllers.ClaimsController",
+    "Method": "GetUserInfo",
+    "RelativePath": "api/Claims/user-info",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BffServer.Controllers.UserController",
     "Method": "GetUser",
     "RelativePath": "api/User",

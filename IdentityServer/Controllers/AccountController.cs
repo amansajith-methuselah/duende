@@ -176,103 +176,64 @@ public class AccountController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Register(RegisterViewModel model)
     {
-        ViewData["ReturnUrl"] = model.ReturnUrl;
-
-        _logger.LogInformation("Registration submitted with ReturnUrl: {ReturnUrl}", model.ReturnUrl);
-
-        if (ModelState.IsValid)
+        if (!ModelState.IsValid)
         {
-            // Get tenant from HttpContext
-            var tenantId = HttpContext.Items["TenantId"] as string;
+            return View(model);
+        }
 
-            var user = new ApplicationUser
+        var tenantId = HttpContext.Items["TenantId"]?.ToString();
+        if (string.IsNullOrEmpty(tenantId))
+        {
+            ModelState.AddModelError(string.Empty, "Tenant not found");
+            return View(model);
+        }
+
+        var user = new ApplicationUser
+        {
+            UserName = model.Email, // Use Email as username for now
+            Email = model.Email,
+            PhoneNumber = model.PhoneNumber,
+            EmailConfirmed = true,
+            TenantId = tenantId
+        };
+
+        var result = await _userManager.CreateAsync(user, model.Password);
+
+        if (result.Succeeded)
+        {
+            // Add custom claims
+            var claims = new List<System.Security.Claims.Claim>
+        {
+            new System.Security.Claims.Claim("name", $"{model.FirstName} {model.LastName}"),
+            new System.Security.Claims.Claim("given_name", model.FirstName),
+            new System.Security.Claims.Claim("family_name", model.LastName)
+        };
+
+            if (!string.IsNullOrEmpty(model.PhoneNumber))
             {
-                UserName = model.Username,
-                Email = model.Email,
-                EmailConfirmed = true,
-                TenantId = tenantId  // Assign tenant to user
-            };
-
-            // The custom validator will check username/email uniqueness within tenant
-            var result = await _userManager.CreateAsync(user, model.Password);
-
-            if (result.Succeeded)
-            {
-                _logger.LogInformation("User created a new account with password.");
-
-                var claims = new List<Claim>
-            {
-                new Claim("name", $"{model.FirstName} {model.LastName}"),
-                new Claim("given_name", model.FirstName),
-                new Claim("family_name", model.LastName),
-                new Claim("email", model.Email),
-                new Claim("preferred_username", model.Username),
-                new Claim("email_verified", "true")
-            };
-
-                if (!string.IsNullOrEmpty(model.PhoneNumber))
-                {
-                    claims.Add(new Claim("phone_number", model.PhoneNumber));
-                    claims.Add(new Claim("phone_number_verified", "true"));
-                    user.PhoneNumber = model.PhoneNumber;
-                    user.PhoneNumberConfirmed = true;
-                }
-
-                if (model.DateOfBirth.HasValue)
-                {
-                    claims.Add(new Claim("birthdate", model.DateOfBirth.Value.ToString("yyyy-MM-dd")));
-                }
-
-                if (!string.IsNullOrEmpty(model.Country))
-                {
-                    claims.Add(new Claim("country", model.Country));
-                }
-
-                await _userManager.AddClaimsAsync(user, claims);
-                await _userManager.UpdateAsync(user);
-
-                _logger.LogInformation("User claims added successfully.");
-
-                await _signInManager.SignInAsync(user, isPersistent: false);
-
-                _logger.LogInformation("User signed in successfully.");
-
-                await _events.RaiseAsync(new UserLoginSuccessEvent(
-                    user.UserName,
-                    user.Id,
-                    user.UserName,
-                    clientId: null));
-
-                if (!string.IsNullOrEmpty(model.ReturnUrl))
-                {
-                    var context = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl);
-
-                    if (context != null)
-                    {
-                        _logger.LogInformation("OAuth context found. Client: {ClientId}. Redirecting to: {ReturnUrl}",
-                            context.Client?.ClientId, model.ReturnUrl);
-
-                        return Redirect(model.ReturnUrl);
-                    }
-                    else if (Url.IsLocalUrl(model.ReturnUrl))
-                    {
-                        _logger.LogInformation("Local return URL found. Redirecting to: {ReturnUrl}", model.ReturnUrl);
-                        return Redirect(model.ReturnUrl);
-                    }
-                    else
-                    {
-                        _logger.LogWarning("Return URL is not local: {ReturnUrl}", model.ReturnUrl);
-                    }
-                }
-
-                _logger.LogInformation("No OAuth context. Showing success page.");
-                return RedirectToAction(nameof(RegisterSuccess), new { returnUrl = model.ReturnUrl });
+                claims.Add(new System.Security.Claims.Claim("phone_number", model.PhoneNumber));
             }
 
-            foreach (var error in result.Errors)
+            if (model.DateOfBirth.HasValue)
             {
-                ModelState.AddModelError(string.Empty, error.Description);
+                claims.Add(new System.Security.Claims.Claim("birthdate", model.DateOfBirth.Value.ToString("yyyy-MM-dd")));
             }
+
+            if (!string.IsNullOrEmpty(model.Country))
+            {
+                claims.Add(new System.Security.Claims.Claim("country", model.Country));
+            }
+
+            await _userManager.AddClaimsAsync(user, claims);
+
+            _logger.LogInformation("User {Email} created successfully in tenant {TenantId}", model.Email, tenantId);
+
+            return RedirectToAction(nameof(Login));
+        }
+
+        foreach (var error in result.Errors)
+        {
+            ModelState.AddModelError(string.Empty, error.Description);
         }
 
         return View(model);

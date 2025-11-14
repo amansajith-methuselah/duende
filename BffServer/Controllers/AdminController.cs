@@ -12,11 +12,16 @@ namespace BffServer.Controllers
     {
         private readonly IConfiguration _configuration;
         private readonly ILogger<AdminController> _logger;
+        private readonly IHttpClientFactory _httpClientFactory;
 
-        public AdminController(IConfiguration configuration, ILogger<AdminController> logger)
+        public AdminController(
+            IConfiguration configuration,
+            ILogger<AdminController> logger,
+            IHttpClientFactory httpClientFactory)
         {
             _configuration = configuration;
             _logger = logger;
+            _httpClientFactory = httpClientFactory;
         }
 
         // GET: api/admin/users
@@ -515,6 +520,281 @@ namespace BffServer.Controllers
                 await command.ExecuteNonQueryAsync();
             }
         }
+
+        // ═══════════════════════════════════════════════════════════════
+        // DATABASE MANAGEMENT ENDPOINTS
+        // ═══════════════════════════════════════════════════════════════
+
+        // GET: api/admin/tenants/{tenantId}/database-config
+        [HttpGet("tenants/{tenantId}/database-config")]
+        public async Task<IActionResult> GetTenantDatabaseConfig(string tenantId)
+        {
+            try
+            {
+                var connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    var query = @"
+                SELECT TenantId, Name, UseOwnDatabase, DatabaseMigrationStatus, 
+                       LastMigrationDate,
+                       CASE WHEN CustomConnectionString IS NOT NULL THEN 1 ELSE 0 END as HasCustomConnection
+                FROM Tenants 
+                WHERE TenantId = @TenantId";
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@TenantId", tenantId);
+
+                        using (var reader = await command.ExecuteReaderAsync())
+                        {
+                            if (await reader.ReadAsync())
+                            {
+                                var config = new
+                                {
+                                    tenantId = reader["TenantId"].ToString(),
+                                    name = reader["Name"].ToString(),
+                                    useOwnDatabase = Convert.ToBoolean(reader["UseOwnDatabase"]),
+                                    databaseMigrationStatus = reader["DatabaseMigrationStatus"]?.ToString(),
+                                    lastMigrationDate = reader["LastMigrationDate"] != DBNull.Value
+                                        ? Convert.ToDateTime(reader["LastMigrationDate"])
+                                        : (DateTime?)null,
+                                    hasCustomConnection = Convert.ToBoolean(reader["HasCustomConnection"]),
+                                    globalMultiDbMode = _configuration.GetValue<bool>("IdentityDbSetup:MultiDatabase", false)
+                                };
+
+                                return Ok(new { success = true, config });
+                            }
+                        }
+                    }
+                }
+
+                return NotFound(new { success = false, error = "Tenant not found" });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error fetching tenant database configuration");
+                return StatusCode(500, new { success = false, error = ex.Message });
+            }
+        }
+
+        // POST: api/admin/tenants/{tenantId}/database-config/test
+        [HttpPost("tenants/{tenantId}/database-config/test")]
+        public async Task<IActionResult> TestDatabaseConnection(string tenantId, [FromBody] TestConnectionRequest request)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(request.ConnectionString))
+                {
+                    return BadRequest(new { success = false, error = "Connection string is required" });
+                }
+
+                // Test the connection
+                using var connection = new SqlConnection(request.ConnectionString);
+                await connection.OpenAsync();
+
+                // Test a simple query
+                using var command = new SqlCommand("SELECT 1", connection);
+                await command.ExecuteScalarAsync();
+
+                // Get database name
+                var databaseName = connection.Database;
+
+                return Ok(new
+                {
+                    success = true,
+                    message = "Connection successful",
+                    databaseName,
+                    serverVersion = connection.ServerVersion
+                });
+            }
+            catch (SqlException sqlEx)
+            {
+                _logger.LogWarning(sqlEx, "Connection test failed for tenant {TenantId}", tenantId);
+                return Ok(new
+                {
+                    success = false,
+                    error = $"Connection failed: {sqlEx.Message}",
+                    errorCode = sqlEx.Number
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error testing connection for tenant {TenantId}", tenantId);
+                return Ok(new { success = false, error = $"Connection test failed: {ex.Message}" });
+            }
+        }
+
+        // PUT: api/admin/tenants/{tenantId}/database-config
+        [HttpPut("tenants/{tenantId}/database-config")]
+        public async Task<IActionResult> UpdateTenantDatabaseConfig(string tenantId, [FromBody] UpdateDatabaseConfigRequest request)
+        {
+            try
+            {
+                if (tenantId.Equals("admin", StringComparison.OrdinalIgnoreCase))
+                {
+                    return BadRequest(new { success = false, error = "Cannot modify admin tenant database configuration" });
+                }
+
+                // Validate request
+                if (request.UseOwnDatabase && string.IsNullOrWhiteSpace(request.CustomConnectionString))
+                {
+                    return BadRequest(new
+                    {
+                        success = false,
+                        error = "Custom connection string is required when UseOwnDatabase is true"
+                    });
+                }
+
+                var connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    var query = @"
+                UPDATE Tenants 
+                SET UseOwnDatabase = @UseOwnDatabase,
+                    CustomConnectionString = @CustomConnectionString,
+                    DatabaseMigrationStatus = @MigrationStatus,
+                    UpdatedAt = GETUTCDATE()
+                WHERE TenantId = @TenantId";
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@TenantId", tenantId);
+                        command.Parameters.AddWithValue("@UseOwnDatabase", request.UseOwnDatabase);
+                        command.Parameters.AddWithValue("@CustomConnectionString",
+                            (object?)request.CustomConnectionString ?? DBNull.Value);
+
+                        // Set migration status
+                        string migrationStatus = request.UseOwnDatabase && !string.IsNullOrEmpty(request.CustomConnectionString)
+                            ? "Pending"
+                            : "NotConfigured";
+                        command.Parameters.AddWithValue("@MigrationStatus", migrationStatus);
+
+                        var rowsAffected = await command.ExecuteNonQueryAsync();
+
+                        if (rowsAffected == 0)
+                        {
+                            return NotFound(new { success = false, error = "Tenant not found" });
+                        }
+                    }
+                }
+
+                return Ok(new
+                {
+                    success = true,
+                    message = "Database configuration updated successfully",
+                    requiresMigration = request.UseOwnDatabase && !string.IsNullOrEmpty(request.CustomConnectionString)
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating tenant database configuration");
+                return StatusCode(500, new { success = false, error = ex.Message });
+            }
+        }
+
+        // POST: api/admin/tenants/{tenantId}/database-config/migrate
+        [HttpPost("tenants/{tenantId}/database-config/migrate")]
+        public async Task<IActionResult> RunMigrations(string tenantId)
+        {
+            try
+            {
+                // Get IdentityServer URL from configuration
+                var identityServerUrl = _configuration.GetValue<string>("IdentityServerUrl") ?? "https://localhost:7140";
+
+                // Forward the migration request to IdentityServer's Admin API
+                var client = _httpClientFactory.CreateClient();
+                var response = await client.PostAsync(
+                    $"{identityServerUrl}/api/admin/migrate/{tenantId}",
+                    null);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    return Ok(new
+                    {
+                        success = true,
+                        message = "Migration request forwarded to IdentityServer",
+                        details = content
+                    });
+                }
+                else
+                {
+                    return StatusCode((int)response.StatusCode, new
+                    {
+                        success = false,
+                        error = "Failed to forward migration request to IdentityServer"
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error forwarding migration request for tenant {TenantId}", tenantId);
+                return StatusCode(500, new { success = false, error = ex.Message });
+            }
+        }
+
+        // GET: api/admin/system-info
+        [HttpGet("system-info")]
+        public IActionResult GetSystemInfo()
+        {
+            try
+            {
+                var multiDbEnabled = _configuration.GetValue<bool>("IdentityDbSetup:MultiDatabase", false);
+                var defaultConnection = _configuration.GetConnectionString("DefaultConnection");
+
+                var builder = new SqlConnectionStringBuilder(defaultConnection);
+
+                return Ok(new
+                {
+                    success = true,
+                    system = new
+                    {
+                        globalMultiDatabaseMode = multiDbEnabled,
+                        databaseServer = builder.DataSource,
+                        defaultDatabase = builder.InitialCatalog,
+                        databaseNamingPattern = multiDbEnabled
+                            ? "DuendeIdentityServer_{tenantId}"
+                            : builder.InitialCatalog,
+                        description = multiDbEnabled
+                            ? "Global multi-database mode: Each tenant gets auto-generated database unless overridden"
+                            : "Shared database mode: All tenants share single database unless individually configured"
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error fetching system info");
+                return StatusCode(500, new { success = false, error = ex.Message });
+            }
+        }
+
+        // Helper method to update migration status
+        private async Task UpdateMigrationStatus(string tenantId, string status, DateTime? migrationDate)
+        {
+            var connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+            using var connection = new SqlConnection(connectionString);
+            await connection.OpenAsync();
+
+            var query = @"
+        UPDATE Tenants 
+        SET DatabaseMigrationStatus = @Status,
+            LastMigrationDate = @MigrationDate
+        WHERE TenantId = @TenantId";
+
+            using var command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@TenantId", tenantId);
+            command.Parameters.AddWithValue("@Status", status);
+            command.Parameters.AddWithValue("@MigrationDate", (object?)migrationDate ?? DBNull.Value);
+
+            await command.ExecuteNonQueryAsync();
+        }
     }
 
     public class LockUserRequest
@@ -528,5 +808,16 @@ namespace BffServer.Controllers
         public string Name { get; set; } = string.Empty;
         public string Domain { get; set; } = string.Empty;
         public string? PrimaryColor { get; set; }
+    }
+
+    public class TestConnectionRequest
+    {
+        public string ConnectionString { get; set; } = string.Empty;
+    }
+
+    public class UpdateDatabaseConfigRequest
+    {
+        public bool UseOwnDatabase { get; set; }
+        public string? CustomConnectionString { get; set; }
     }
 }
