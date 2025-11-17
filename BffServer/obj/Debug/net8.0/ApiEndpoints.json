@@ -17,6 +17,16 @@
   },
   {
     "ContainingType": "BffServer.Controllers.AdminController",
+    "Method": "GetSystemInfo",
+    "RelativePath": "api/Admin/system-info",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BffServer.Controllers.AdminController",
     "Method": "GetAllTenants",
     "RelativePath": "api/Admin/tenants",
     "HttpMethod": "GET",
@@ -52,6 +62,80 @@
       {
         "Name": "tenantId",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BffServer.Controllers.AdminController",
+    "Method": "GetTenantDatabaseConfig",
+    "RelativePath": "api/Admin/tenants/{tenantId}/database-config",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenantId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BffServer.Controllers.AdminController",
+    "Method": "UpdateTenantDatabaseConfig",
+    "RelativePath": "api/Admin/tenants/{tenantId}/database-config",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenantId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "BffServer.Controllers.UpdateDatabaseConfigRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BffServer.Controllers.AdminController",
+    "Method": "RunMigrations",
+    "RelativePath": "api/Admin/tenants/{tenantId}/database-config/migrate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenantId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BffServer.Controllers.AdminController",
+    "Method": "TestDatabaseConnection",
+    "RelativePath": "api/Admin/tenants/{tenantId}/database-config/test",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenantId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "BffServer.Controllers.TestConnectionRequest",
         "IsRequired": true
       }
     ],

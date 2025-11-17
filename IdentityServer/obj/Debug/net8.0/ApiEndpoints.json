@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "ContainingType": "IdentityServer.Controllers.AdminController",
+    "Method": "RunMigrations",
+    "RelativePath": "api/Admin/migrate/{tenantId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenantId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
