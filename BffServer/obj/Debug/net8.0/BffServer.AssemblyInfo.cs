@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BffServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a2eb6a4213c4c23684ad8a845fe1cf2df3f6e7fd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a99725335bf41c6f602720f049839a806ebf1aca")]
 [assembly: System.Reflection.AssemblyProductAttribute("BffServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BffServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
