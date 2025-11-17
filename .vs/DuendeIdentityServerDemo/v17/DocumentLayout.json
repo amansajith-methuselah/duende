@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Project\\du\\DuendeIdentityServerDemo\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|C:\\Project\\du\\DuendeIdentityServerDemo\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|c:\\project\\du\\duendeidentityserverdemo\\identityserver\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7311F7CD-406E-45F8-86BE-2796DDB0B358}|IdentityServer\\IdentityServer.csproj|solutionrelative:identityserver\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -253,7 +257,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\appsettings.json",
               "RelativeDocumentMoniker": "BffServer\\appsettings.json",
@@ -267,6 +271,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Project\\du\\DuendeIdentityServerDemo\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-17T05:11:10.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Controllers\\AdminController.cs",
@@ -279,7 +296,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "BffServer\\Controllers\\AdminController.cs",
@@ -291,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Program.cs",
               "RelativeDocumentMoniker": "BffServer\\Program.cs",
@@ -303,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Program.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Program.cs",
@@ -315,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\wwwroot\\index.html",
               "RelativeDocumentMoniker": "BffServer\\wwwroot\\index.html",
@@ -327,7 +344,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Controllers\\AccountController.cs",
@@ -339,7 +356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "TenantDbContextFactory.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Data\\TenantDbContextFactory.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Data\\TenantDbContextFactory.cs",
@@ -351,7 +368,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Tenant.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Data\\Tenant.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Data\\Tenant.cs",
@@ -363,7 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "TenantConnectionResolver.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Services\\TenantConnectionResolver.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Services\\TenantConnectionResolver.cs",
@@ -375,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ClaimsController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\ClaimsController.cs",
               "RelativeDocumentMoniker": "BffServer\\Controllers\\ClaimsController.cs",
@@ -387,7 +404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "IdentityServer.csproj",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\IdentityServer.csproj",
               "RelativeDocumentMoniker": "IdentityServer\\IdentityServer.csproj",
@@ -399,7 +416,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\appsettings.json",
               "RelativeDocumentMoniker": "IdentityServer\\appsettings.json",
@@ -411,7 +428,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "BffServer\\Controllers\\AuthController.cs",
@@ -423,7 +440,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "global.json",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\global.json",
               "RelativeDocumentMoniker": "IdentityServer\\global.json",
@@ -435,7 +452,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "SeedData.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\SeedData.cs",
               "RelativeDocumentMoniker": "IdentityServer\\SeedData.cs",
@@ -447,7 +464,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "BffServer.csproj",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\BffServer.csproj",
               "RelativeDocumentMoniker": "BffServer\\BffServer.csproj",
@@ -459,7 +476,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "ProfileService.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Services\\ProfileService.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Services\\ProfileService.cs",
@@ -471,7 +488,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Home\\Error.cshtml",
               "RelativeDocumentMoniker": "IdentityServer\\Views\\Home\\Error.cshtml",
@@ -483,7 +500,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "TenantAwareUserValidator.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Services\\TenantAwareUserValidator.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Services\\TenantAwareUserValidator.cs",
@@ -495,7 +512,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "BffServer.http",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\BffServer.http",
               "RelativeDocumentMoniker": "BffServer\\BffServer.http",
@@ -507,7 +524,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "TenantAwareClientStore.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Services\\TenantAwareClientStore.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Services\\TenantAwareClientStore.cs",
@@ -519,7 +536,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Logout.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Account\\Logout.cshtml",
               "RelativeDocumentMoniker": "IdentityServer\\Views\\Account\\Logout.cshtml",
@@ -531,7 +548,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Microsoft.NET.Sdk.FrameworkReferenceResolution.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.307\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.307\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets",
@@ -543,7 +560,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "TenantResolutionMiddleware.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Middleware\\TenantResolutionMiddleware.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Middleware\\TenantResolutionMiddleware.cs",
@@ -555,7 +572,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Data\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Data\\ApplicationUser.cs",
@@ -567,7 +584,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "IdentityServer\\Views\\Account\\Login.cshtml",
@@ -579,7 +596,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "SeedDataMultiTenant.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\SeedDataMultiTenant.cs",
               "RelativeDocumentMoniker": "IdentityServer\\SeedDataMultiTenant.cs",
@@ -591,7 +608,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Data\\ApplicationDbContext.cs",
@@ -603,7 +620,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "ApiController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\ApiController.cs",
               "RelativeDocumentMoniker": "BffServer\\Controllers\\ApiController.cs",
@@ -615,7 +632,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "ClientApp.csproj",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\ClientApp\\ClientApp.csproj",
               "RelativeDocumentMoniker": "ClientApp\\ClientApp.csproj",
@@ -627,7 +644,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "Config.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Config.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Config.cs",
@@ -639,7 +656,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "BffServer\\Controllers\\AccountController.cs",
@@ -651,7 +668,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "BffServer\\Controllers\\UserController.cs",
@@ -663,7 +680,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "Profile.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Views\\Account\\Profile.cshtml",
               "RelativeDocumentMoniker": "BffServer\\Views\\Account\\Profile.cshtml",
@@ -675,7 +692,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "BffServer\\Views\\Home\\Index.cshtml",
@@ -687,7 +704,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "BffServer\\Views\\Shared\\_Layout.cshtml",
@@ -699,7 +716,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "BffServer\\Views\\_ViewImports.cshtml",
@@ -711,7 +728,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "AccessDenied.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Views\\Account\\AccessDenied.cshtml",
               "RelativeDocumentMoniker": "BffServer\\Views\\Account\\AccessDenied.cshtml",
@@ -723,7 +740,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "BffServer\\Controllers\\HomeController.cs",
@@ -735,7 +752,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "BffServer\\Models\\ErrorViewModel.cs",
@@ -747,7 +764,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "UserViewModel.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Models\\UserViewModel.cs",
               "RelativeDocumentMoniker": "BffServer\\Models\\UserViewModel.cs",
@@ -759,7 +776,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "IdentityServer\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -771,7 +788,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "IdentityServer\\Views\\Home\\Index.cshtml",
@@ -783,7 +800,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "AccessDenied.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Account\\AccessDenied.cshtml",
               "RelativeDocumentMoniker": "IdentityServer\\Views\\Account\\AccessDenied.cshtml",
@@ -795,7 +812,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "RegisterSuccess.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Account\\RegisterSuccess.cshtml",
               "RelativeDocumentMoniker": "IdentityServer\\Views\\Account\\RegisterSuccess.cshtml",
@@ -807,7 +824,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "IdentityServer\\Views\\Account\\Register.cshtml",
@@ -819,7 +836,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "IdentityServer\\Views\\Shared\\_Layout.cshtml",
@@ -831,7 +848,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "IdentityServer\\Views\\_ViewImports.cshtml",
@@ -843,7 +860,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Controllers\\HomeController.cs",
@@ -855,7 +872,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "LogoutViewModel.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Models\\AccountViewModels\\LogoutViewModel.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Models\\AccountViewModels\\LogoutViewModel.cs",
@@ -867,7 +884,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Models\\AccountViewModels\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Models\\AccountViewModels\\RegisterViewModel.cs",
@@ -879,7 +896,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 53,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\Models\\AccountViewModels\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Models\\AccountViewModels\\LoginViewModel.cs",
@@ -891,7 +908,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 55,
               "Title": "site.scss",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\IdentityServer\\wwwroot\\css\\site.scss",
               "RelativeDocumentMoniker": "IdentityServer\\wwwroot\\css\\site.scss",
@@ -903,7 +920,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 56,
               "Title": "logout.html",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\wwwroot\\logout.html",
               "RelativeDocumentMoniker": "BffServer\\wwwroot\\logout.html",
@@ -915,7 +932,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 54,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\ClientApp\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "ClientApp\\Controllers\\HomeController.cs",
@@ -927,7 +944,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 60,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\ClientApp\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "ClientApp\\Properties\\launchSettings.json",
@@ -939,7 +956,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 57,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\BffServer\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "BffServer\\Properties\\launchSettings.json",
@@ -951,7 +968,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 58,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\ClientApp\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "ClientApp\\Views\\Shared\\_Layout.cshtml",
@@ -963,7 +980,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 59,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Project\\du\\DuendeIdentityServerDemo\\ClientApp\\Program.cs",
               "RelativeDocumentMoniker": "ClientApp\\Program.cs",
