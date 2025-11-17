@@ -99,7 +99,7 @@ builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 
 // Seed data
-await SeedData.EnsureSeedData(app);
+//await SeedData.EnsureSeedData(app);
 await SeedDataMultiTenant.EnsureSeedData(app.Services);
 
 // Configure the HTTP request pipeline
